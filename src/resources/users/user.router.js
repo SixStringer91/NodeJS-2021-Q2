@@ -4,7 +4,7 @@ const usersService = require('./user.service');
 
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
-
+  console.log(users)
   res.json(users.map(User.toResponse));
 });
 

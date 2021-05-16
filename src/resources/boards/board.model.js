@@ -11,8 +11,8 @@ class Board {
     this.columns = [...columns];
   };
 
-  static columnIdGenerator(column) {
-   return column.map(el => ({...el, id: uuid.v4()}));
+  static columnIdGenerator(columns) {
+   return columns.map(el => ({...el, id: uuid.v4()}));
   }
 
   static toResponse(board) {
