@@ -32,7 +32,6 @@ router.route('/:boardId').put(async (req, res) => {
 });
 
 router.route('/:boardId').delete(async (req, res) => {
-
   const boardFinded = await boardsService.deleteBoard(req.params.boardId);
   if(boardFinded) {
     await deleteBoardTasks(req.params.boardId);

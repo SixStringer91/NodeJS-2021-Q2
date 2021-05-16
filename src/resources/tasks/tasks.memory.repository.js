@@ -1,6 +1,6 @@
 const TASKS = [];
 
-const getAll = async () => TASKS;
+const getAll = async (boardsId) => TASKS.filter(el => el.boardId===boardsId);
 
 const createTask = async (task) => {
   TASKS.push(task);
