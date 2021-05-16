@@ -11,12 +11,11 @@ router.route('/').get(async (req, res) => {
 
 router.route('/:taskId').get(async (req, res) => {
   const task = await taskService.getTask(req.params.taskId);
-  if(task) return res.status(200).json(Task.toResponse(task));
+  if(task !== undefined) return res.status(200).json(Task.toResponse(task));
   return res.status(404).send('Task not found');
 });
 
 router.route('/').post(async (req, res) => {
-  console.log(req.body);
   const newTask = await taskService.createTask(
     new Task({...req.body, boardsId: req.params.boardsId})
   );
