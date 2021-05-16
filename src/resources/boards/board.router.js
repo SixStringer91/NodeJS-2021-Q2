@@ -10,12 +10,11 @@ router.route('/').get(async (req, res) => {
 
 router.route('/:boardId').get(async (req, res) => {
   const board = await boardsService.getBoard(req.params.boardId);
-  if(board){
- return res.json(Board.toResponse(board));
-}
+  if (board) {
+    return res.json(Board.toResponse(board));
+  }
   return res.status(404).send('Board not found');
 });
-
 
 router.route('/').post(async (req, res) => {
   const newBoard = await boardsService.createBoard(new Board(req.body));
@@ -23,7 +22,10 @@ router.route('/').post(async (req, res) => {
 });
 
 router.route('/:boardId').put(async (req, res) => {
-  const newBoard = await boardsService.updateBoard({...req.body, id : req.params.boardId});
+  const newBoard = await boardsService.updateBoard({
+    ...req.body,
+    id: req.params.boardId,
+  });
   try {
     return res.status(200).json(Board.toResponse(newBoard));
   } catch (err) {
@@ -33,11 +35,11 @@ router.route('/:boardId').put(async (req, res) => {
 
 router.route('/:boardId').delete(async (req, res) => {
   const boardFinded = await boardsService.deleteBoard(req.params.boardId);
-  if(boardFinded) {
+  if (boardFinded) {
     await deleteBoardTasks(req.params.boardId);
     return res.status(204).send('The board has been deleted');
   }
-   return res.status(404).send('Board not found');
+  return res.status(404).send('Board not found');
 });
 
 module.exports = router;

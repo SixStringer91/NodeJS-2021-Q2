@@ -8,8 +8,8 @@ class Task {
     description,
     userId,
     boardsId,
-    columnId
-  }={}) {
+    columnId,
+  } = {}) {
     this.id = id;
     this.title = title;
     this.order = order;
@@ -20,8 +20,8 @@ class Task {
   }
 
   static toResponse(task) {
-    const {id, title, order, description, userId, boardId, columnId } = task;
-    return {id, title, order, description, userId, boardId, columnId };
+    const { id, title, order, description, userId, boardId, columnId } = task;
+    return { id, title, order, description, userId, boardId, columnId };
   }
 }
 

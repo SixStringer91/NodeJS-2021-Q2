@@ -1,6 +1,7 @@
 const TASKS = [];
 
-const getAll = async (boardsId) => TASKS.filter(el => el.boardId===boardsId);
+const getAll = async (boardsId) =>
+  TASKS.filter((el) => el.boardId === boardsId);
 
 const createTask = async (task) => {
   TASKS.push(task);
@@ -34,15 +35,15 @@ const deleteTask = async (id) => {
 };
 
 const deleteAllTasks = async (boardId) => {
-  TASKS.forEach((task,i) => {
+  TASKS.forEach((task, i) => {
     if (task.boardId === boardId) {
-      TASKS.splice(i,1);
+      TASKS.splice(i, 1);
     }
   });
 };
 
 const ifUserDeleted = async (userId) => {
-  TASKS.forEach((task,i) => {
+  TASKS.forEach((task, i) => {
     if (task.userId === userId) {
       TASKS[i].userId = null;
     }

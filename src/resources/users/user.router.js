@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const User = require('./user.model');
 const usersService = require('./user.service');
-const taskUserHandler = require('../tasks/tasks.service').ifUserDeleted
+const taskUserHandler = require('../tasks/tasks.service').ifUserDeleted;
 
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
