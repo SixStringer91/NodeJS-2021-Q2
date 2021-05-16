@@ -1,6 +1,6 @@
 const uuid = require('uuid');
 
-class Board {
+class Task {
   constructor({
     id = uuid.v4(),
     title = 'BOARD',
@@ -21,4 +21,4 @@ class Board {
   };
 };
 
-module.exports = Board;
+module.exports = Task;
