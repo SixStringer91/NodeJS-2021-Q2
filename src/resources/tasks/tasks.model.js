@@ -2,23 +2,27 @@ const uuid = require('uuid');
 
 class Task {
   constructor({
-    id = uuid.v4(),
-    title = 'BOARD',
-    columns = []
+    id = uuid(),
+    title,
+    order,
+    description,
+    userId,
+    boardId,
+    columnId,
   }) {
     this.id = id;
     this.title = title;
-    this.columns = columns;
-  };
-
-  static columnIdGenerator(column) {
-   return column.map(el => ({...el, id: uuid.v4()}));
+    this.order = order;
+    this.description = description;
+    this.userId = userId;
+    this.boardId = boardId;
+    this.columnId = columnId;
   }
 
   static toResponse(board) {
-    const { id, title, columns } = board;
-    return { id, title, columns };
-  };
-};
+    const { title, order, description, userId, boardId, columnId } = board;
+    return { title, order, description, userId, boardId, columnId };
+  }
+}
 
 module.exports = Task;
