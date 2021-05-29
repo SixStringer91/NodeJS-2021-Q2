@@ -2,7 +2,7 @@ const TASKS = [];
 /**
  * Get all tasks from fake db
  * @param {number} string id of board
- * @returns {object} task
+ * @returns {Array} tasks
  */
 const getAll = async (boardsId) =>
   TASKS.filter((el) => el.boardId === boardsId);
