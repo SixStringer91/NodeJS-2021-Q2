@@ -1,15 +1,15 @@
 const TASKS = [];
 /**
  * Get all tasks from fake db
- * @param {number} string id of board
+ * @param {string} boardsId id of board
  * @returns {Array} tasks
  */
 const getAll = async (boardsId) =>
   TASKS.filter((el) => el.boardId === boardsId);
  /**
  * Create new task
- * @param {object} task task body
- * @returns {object} generated task body
+ * @param {Object} task task body
+ * @returns {Object} generated task body
  */ 
 const createTask = async (task) => {
   TASKS.push(task);

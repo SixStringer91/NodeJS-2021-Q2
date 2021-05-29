@@ -7,7 +7,7 @@ const getAll = async () => BOARDS;
  /**
  * get boards by id
  * @param {string} id user id
- * @returns {Object} returns board
+ * @returns {Object | undefined} returns board
  */
 const getBoard = async (id) => BOARDS.find((el) => el.id === id);
  /**
@@ -22,7 +22,7 @@ const createNewBoard = async (board) => {
  /**
  * Update board 
  * @param {Object} obj board body
- * @returns {Object} returns updated board
+ * @returns {Object | undefined} returns updated board
  */
 const updateBoard = async (obj) => {
   const boardIndex = BOARDS.findIndex((board) => obj.id === board.id);

@@ -7,7 +7,7 @@ const getAll = async () => USERS;
  /**
  * Create new user
  * @param {Object} user user body array
- * @returns {Object} returns created user
+ * @returns {Object | undefined} returns created user
  */
 const createNewUser = (user) => {
   USERS.push(user);
@@ -16,13 +16,13 @@ const createNewUser = (user) => {
  /**
  * Get user by id
  * @param {string} id user id
- * @returns {Object} returns finded user
+ * @returns {Object | undefined} returns finded user
  */
 const getOneUser = async (id) => USERS.find((user) => id === user.id);
  /**
  * Update user
  * @param {Object} obj user body contains
- * @returns {Object} returns finded user by id in obj
+ * @returns {Object | undefined} returns finded user by id in obj
  */
 const updateUser = (obj) => {
   const userIndex = USERS.findIndex((user) => obj.id === user.id);
