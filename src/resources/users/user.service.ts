@@ -10,5 +10,5 @@ export const updateUser = (obj:
   id:string,
   name?:string,
   password?:string,
-  login?:string }):User | undefined => usersRepo.updateUser(obj);
+  login?:string }):User | void => usersRepo.updateUser(obj);
 export const deleteUser = (id: string):Promise<User[]> => usersRepo.deleteUser(id);

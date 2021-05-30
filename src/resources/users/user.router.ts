@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import User from './user.model';
 import {
   getAll,
@@ -8,11 +8,11 @@ import {
   deleteUser,
 } from './user.service';
 
-const taskUserHandler = require('../tasks/tasks.service').ifUserDeleted;
+// const taskUserHandler = require('../tasks/tasks.service').ifUserDeleted;
 
 const router = express.Router();
 
-router.route('/').get(async (_req: Request, res: Response) => {
+router.route('/').get(async (_req, res) => {
   const users = await getAll();
   if (users) {
     res.json(users.map(User.toResponse));
@@ -50,7 +50,7 @@ router.route('/:userId').put(async (req, res) => {
 router.route('/:userId').delete(async (req, res) => {
   const userFinded = await deleteUser(req.params.userId);
   if (userFinded) {
-    await taskUserHandler(req.params.userId);
+    //await taskUserHandler(req.params.userId);
     return res.status(204).send('The board has been deleted');
   }
 
