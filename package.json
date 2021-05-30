@@ -10,7 +10,7 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "nodemon ./src/server.ts",
-    "debug": "nodemon --inspect=http://localhost:4000 ./src/server.ts",
+    "debug": "nodemon --require ts-node/register --require tsconfig-paths/register src/server.ts",
     "build": "tsc ./src/server.ts",
     "start": "ts-node ./src/server.ts",
     "lint": "eslint --ext .js,.ts --fix src/",

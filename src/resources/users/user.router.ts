@@ -30,7 +30,9 @@ router.route('/:userId').get(async (req, res) => {
 
 router.route('/').post(async (req, res) => {
   const newUser = await createUser(new User(req.body));
-  if (newUser) return res.status(201).json(User.toResponse(newUser));
+  if (newUser) {
+    return res.status(201).json(User.toResponse(newUser));
+  }
   return res.status(404).send('bad result');
 });
 

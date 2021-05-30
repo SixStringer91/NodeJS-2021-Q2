@@ -1,8 +1,8 @@
-import uuid from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 export default class User {
   constructor({
-    id = uuid.v4(),
+    id = uuid(),
     name = 'USER',
     login = 'user',
     password = 'P@55w0rd',
