@@ -7,8 +7,7 @@ import {
   updateUser,
   deleteUser,
 } from './user.service';
-
-// const taskUserHandler = require('../tasks/tasks.service').ifUserDeleted;
+import { ifUserDeleted } from '../tasks/tasks.service';
 
 const router = express.Router();
 
@@ -50,7 +49,7 @@ router.route('/:userId').put(async (req, res) => {
 router.route('/:userId').delete(async (req, res) => {
   const userFinded = await deleteUser(req.params.userId);
   if (userFinded) {
-    //await taskUserHandler(req.params.userId);
+    await ifUserDeleted(req.params.userId);
     return res.status(204).send('The board has been deleted');
   }
 

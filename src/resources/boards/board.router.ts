@@ -3,9 +3,9 @@ import {
   getAll, getBoard, createBoard, updateBoard, deleteBoard,
 } from './board.service';
 import Board from './board.model';
+import { deleteAllTasks } from '../tasks/tasks.service';
 
 const router = express.Router();
-// const deleteBoardTasks = require('../tasks/tasks.service').deleteAllTasks;
 
 router.route('/').get(async (_req, res) => {
   const boards = await getAll();
@@ -44,7 +44,7 @@ router.route('/:boardId').put(async (req, res) => {
 router.route('/:boardId').delete(async (req, res) => {
   const boardFinded = await deleteBoard(req.params.boardId);
   if (boardFinded) {
-    // await deleteBoardTasks(req.params.boardId);
+    await deleteAllTasks(req.params.boardId);
     return res.status(204).send('The board has been deleted');
   }
   return res.status(404).send('Board not found');

@@ -9,7 +9,7 @@ export default class Task {
 
   userId:string | null;
 
-  boardId:string;
+  boardsId:string;
 
   columnId:string;
 
@@ -20,7 +20,7 @@ export default class Task {
     order,
     description,
     userId,
-    boardId,
+    boardsId,
     columnId,
   }:Task) {
     this.id = uuid();
@@ -28,16 +28,16 @@ export default class Task {
     this.order = order;
     this.description = description;
     this.userId = userId;
-    this.boardId = boardId;
+    this.boardsId = boardsId;
     this.columnId = columnId;
   }
 
   static toResponse(task:Task):Task {
     const {
-      id, title, order, description, userId, boardId, columnId,
+      id, title, order, description, userId, boardsId, columnId,
     } = task;
     return {
-      id, title, order, description, userId, boardId, columnId,
+      id, title, order, description, userId, boardsId, columnId,
     };
   }
 }

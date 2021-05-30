@@ -2,15 +2,20 @@ import Task from './tasks.model';
 
 const TASKS: Task[] = [];
 
-const getAll = async (boardsId: string): Promise<Task[]> => TASKS
-  .filter((el) => el.boardId === boardsId);
+const getAll = async (boardsId: string): Promise<Task[]> => {
+  const filtered = TASKS.filter((el) => el.boardsId === boardsId);
+  return filtered;
+};
 
 const createTask = async (task: Task):Promise<Task|void> => {
   TASKS.push(task);
   return TASKS[TASKS.length - 1];
 };
 
-const getTask = async (id: string):Promise<Task|void> => TASKS.find((task) => task.id === id);
+const getTask = async (id: string):Promise<Task|void> => {
+  const currentTask = TASKS.find((task) => task.id === id);
+  return currentTask;
+};
 
 const updateTask = async (obj: Task):Promise<Task|void|null> => {
   const taskIndex = TASKS.findIndex((user) => obj.id === user.id);
@@ -30,9 +35,9 @@ const deleteTask = async (id: string):Promise<boolean> => {
   return false;
 };
 
-const deleteAllTasks = async (boardId: string):Promise<void> => {
+const deleteAllTasks = async (boardsId: string):Promise<void> => {
   TASKS.forEach((task, i) => {
-    if (task.boardId === boardId) {
+    if (task.boardsId === boardsId) {
       TASKS.splice(i, 1);
     }
   });
