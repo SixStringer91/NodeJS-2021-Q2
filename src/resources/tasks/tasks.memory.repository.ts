@@ -3,7 +3,7 @@ import Task from './tasks.model';
 const TASKS: Task[] = [];
 
 const getAll = async (boardsId: string): Promise<Task[]> => {
-  const filtered = TASKS.filter((el) => el.boardsId === boardsId);
+  const filtered = TASKS.filter((el) => el.boardId === boardsId);
   return filtered;
 };
 
@@ -37,7 +37,7 @@ const deleteTask = async (id: string):Promise<boolean> => {
 
 const deleteAllTasks = async (boardsId: string):Promise<void> => {
   TASKS.forEach((task, i) => {
-    if (task.boardsId === boardsId) {
+    if (task.boardId === boardsId) {
       TASKS.splice(i, 1);
     }
   });

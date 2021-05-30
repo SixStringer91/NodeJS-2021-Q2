@@ -29,13 +29,14 @@ router.route('/:taskId').get(async (req: Request, res: Response):Promise<Respons
 
 router.route('/').post(async (req: Request, res: Response):Promise<Response> => {
   const { boardsId } = req.params;
+
   if (boardsId) {
     const boardCheck = await getBoard(boardsId);
     const newTask = await taskService.createTask(
-      new Task({ ...req.body, boardsId }),
+      new Task({ ...req.body, boardId: boardsId }),
     );
     if (newTask && boardCheck) return res.status(201).json(Task.toResponse(newTask));
-}
+  }
   return res.status(404).send('Bad result');
 });
 

@@ -25,14 +25,6 @@ const deleteBoard = async (id:string):Promise<boolean> => {
     return true;
   }
   return false;
-  // for (let i = 0; i < BOARDS.length; i += 1) {
-  //   if (BOARDS[i].id === id) {
-  //     delete BOARDS[i].columns;
-  //     BOARDS.splice(i, 1);
-  //     return true;
-  //   }
-  // }
-  // return false;
 };
 
 export default {
