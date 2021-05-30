@@ -1,10 +1,9 @@
 import User from './user.model';
-
-const usersRepo = require('./user.memory.repository');
+import usersRepo from './user.memory.repository';
 
 export const getAll = (): Promise<User[]> => usersRepo.getAll();
-export const getUser = (id: string):User => usersRepo.getOneUser(id);
-export const createUser = (user: User):User => usersRepo.createNewUser(user);
+export const getUser = (id: string):Promise<void | User> => usersRepo.getOneUser(id);
+export const createUser = (user: User):void | User => usersRepo.createNewUser(user);
 export const updateUser = (obj:
 {
   id:string,
