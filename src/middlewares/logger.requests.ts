@@ -44,3 +44,7 @@ export const logerRequests = (
     logger.info(`\n METHOD: ${method}\n URL: ${url} \n STATUS: ${statusCode} \n QUERY: ${query} \n BODY: ${body} \n TIME: ${ms}`);
   });
 };
+
+export const loggerErrors = (statusCode: number, message: string):void => {
+  logger.error(`\n CODE: ${statusCode}\n MESSAGE: ${message}`);
+};

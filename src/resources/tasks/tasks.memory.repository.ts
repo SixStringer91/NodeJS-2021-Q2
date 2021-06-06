@@ -59,5 +59,5 @@ export default {
   updateTask,
   deleteTask,
   deleteAllTasks,
-  ifUserDeleted,
+  ifUserDeleted
 };
