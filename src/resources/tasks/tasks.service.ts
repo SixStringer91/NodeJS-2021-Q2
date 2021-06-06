@@ -14,5 +14,5 @@ export default {
   createTask,
   getTask,
   updateTask,
-  deleteTask,
+  deleteTask
 };
