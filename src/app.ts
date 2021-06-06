@@ -36,12 +36,4 @@ app.use((err:ErrorHandler, _req:Request, res:Response, next:NextFunction) => {
 process.on('uncaughtException', uncaughtException);
 process.on('unhandledRejection', unhandledRejection);
 
-// setTimeout(() => {
-//   throw new Error('Oops!');
-// }, 1500);
-
-// setTimeout(() => {
-//   Promise.reject(new Error(' Reject Oops!'));
-// }, 1500);
-
 export default app;
