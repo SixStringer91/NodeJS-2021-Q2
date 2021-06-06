@@ -33,9 +33,9 @@ app.use((err, _req, res, next) => {
 });
 process.on('uncaughtException', error_handler_1.uncaughtException);
 process.on('unhandledRejection', error_handler_1.unhandledRejection);
-setTimeout(() => {
-    throw new Error('Oops!');
-}, 1500);
+// setTimeout(() => {
+//   throw new Error('Oops!');
+// }, 1500);
 // setTimeout(() => {
 //   Promise.reject(new Error(' Reject Oops!'));
 // }, 1500);
