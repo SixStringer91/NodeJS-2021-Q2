@@ -20,13 +20,6 @@ const logger = createLogger({
   ]
 });
 
-// logger.silly('silly');
-// logger.debug('debug');
-// logger.verbose('verbose');
-// logger.info('info');
-// logger.warn('warn');
-// logger.error('error');
-
 export const logerRequests = (
   req: Request,
   res: Response,
@@ -46,5 +39,13 @@ export const logerRequests = (
 };
 
 export const loggerErrors = (statusCode: number, message: string):void => {
-  logger.error(`\n CODE: ${statusCode}\n MESSAGE: ${message}`);
+  logger.warn(`\n CODE: ${statusCode}\n MESSAGE: ${message}`);
+};
+
+export const uncaughtExceptionLogger = (error:Error, origin:string):void => {
+  logger.error(`${error} origin ${origin}`);
+};
+
+export const unhandledRejectionLogger = (message: string):void => {
+  logger.error(`Unhandled rejection detected: ${message}`);
 };
