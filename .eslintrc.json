@@ -29,6 +29,14 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
+      "comma-dangle": ["error", {
+        "arrays": "never",
+        "objects": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+    }],
+    "@typescript-eslint/comma-dangle": "off",
     "import/extensions": "off",
     "linebreak-style": "off",
     "node/no-unsupported-features/es-syntax": "off",
