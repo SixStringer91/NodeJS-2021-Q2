@@ -5,4 +5,4 @@ down:
 build:
 		docker-compose build
 sh:
-		d	ocker-compose exec -it container sh
+		docker-compose exec -it container sh
