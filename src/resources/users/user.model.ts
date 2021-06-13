@@ -5,7 +5,7 @@ export default class User {
     id = uuid(),
     name = 'USER',
     login = 'user',
-    password = 'P@55w0rd',
+    password = 'P@55w0rd'
   } = {}) {
     this['id'] = id;
     this['name'] = name;
@@ -16,7 +16,7 @@ export default class User {
   [keys: string]: string;
 
   static toResponse(
-    user: User,
+    user: User
   ): {
       id: string;
       name: string;

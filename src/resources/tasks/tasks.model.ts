@@ -21,7 +21,7 @@ export default class Task {
     description,
     userId,
     boardId,
-    columnId,
+    columnId
   }:Task) {
     this.id = uuid();
     this.title = title;
@@ -34,10 +34,10 @@ export default class Task {
 
   static toResponse(task:Task):Task {
     const {
-      id, title, order, description, userId, boardId, columnId,
+      id, title, order, description, userId, boardId, columnId
     } = task;
     return {
-      id, title, order, description, userId, boardId, columnId,
+      id, title, order, description, userId, boardId, columnId
     };
   }
 }

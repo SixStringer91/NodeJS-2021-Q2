@@ -1,53 +1,50 @@
 import express from 'express';
 import {
-  getAll, getBoard, createBoard, updateBoard, deleteBoard,
+  getAll, getBoard, createBoard, updateBoard, deleteBoard
 } from './board.service';
 import Board from './board.model';
 import { deleteAllTasks } from '../tasks/tasks.service';
+import { ErrorHandler } from '../../middlewares/error.handler';
 
 const router = express.Router();
 
-router.route('/').get(async (_req, res) => {
+router.route('/').get(async (_req, res, next) => {
   const boards = await getAll();
   if (boards) {
-    return res.json(boards.map(Board.toResponse));
-  }
-  return res.status(404);
+    res.json(boards.map(Board.toResponse));
+  } else next(new ErrorHandler(404));
 });
 
-router.route('/:boardId').get(async (req, res) => {
+router.route('/:boardId').get(async (req, res, next) => {
   const board = await getBoard(req.params.boardId);
   if (board) {
-    return res.json(Board.toResponse(board));
-  }
-  return res.status(404).send('Board not found');
+    res.json(Board.toResponse(board));
+  } else next(new ErrorHandler(404, 'Board not found'));
 });
 
-router.route('/').post(async (req, res) => {
+router.route('/').post(async (req, res, next) => {
   const newBoard = await createBoard(new Board(req.body));
   if (newBoard) {
     res.status(201).json(Board.toResponse(newBoard));
-  }
+  } else next(new ErrorHandler(404));
 });
 
-router.route('/:boardId').put(async (req, res) => {
+router.route('/:boardId').put(async (req, res, next) => {
   const newBoard = await updateBoard({
     ...req.body,
-    id: req.params.boardId,
+    id: req.params.boardId
   });
   if (newBoard) {
-    return res.status(200).json(Board.toResponse(newBoard));
-  }
-  return res.status(401);
+    res.status(200).json(Board.toResponse(newBoard));
+  } else next(new ErrorHandler(401));
 });
 
-router.route('/:boardId').delete(async (req, res) => {
+router.route('/:boardId').delete(async (req, res, next) => {
   const boardFinded = await deleteBoard(req.params.boardId);
   if (boardFinded) {
     await deleteAllTasks(req.params.boardId);
-    return res.status(204).send('The board has been deleted');
-  }
-  return res.status(404).send('Board not found');
+    res.status(204).send('The board has been deleted');
+  } else next(new ErrorHandler(404, 'Board not found'));
 });
 
 export default router;

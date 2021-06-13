@@ -18,5 +18,5 @@ const deleteUser = async (id: string): Promise<User[]> => USERS
   .splice(USERS.findIndex((user) => id === user['id']), 1);
 
 export default {
-  getAll, createNewUser, getOneUser, updateUser, deleteUser,
+  getAll, createNewUser, getOneUser, updateUser, deleteUser
 };

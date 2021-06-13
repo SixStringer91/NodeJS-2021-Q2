@@ -18,12 +18,13 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true
   },
   "exclude": [
     "node_modules/"
   ],
   "include": [
     "./src/**/*.ts"
-  ]
+, "src/middlewares/logger.requeststs"  ]
 }

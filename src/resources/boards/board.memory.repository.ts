@@ -28,5 +28,5 @@ const deleteBoard = async (id:string):Promise<boolean> => {
 };
 
 export default {
-  deleteBoard, updateBoard, createNewBoard, getBoard, getAll,
+  deleteBoard, updateBoard, createNewBoard, getBoard, getAll
 };
