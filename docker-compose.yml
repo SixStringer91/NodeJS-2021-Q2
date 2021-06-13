@@ -9,8 +9,7 @@ services:
       environment: 
         - PORT=${PORT}
       volumes:
-        - /app/node_modules
-        - .:/app
+        - ./src:/usr/app/src
       restart: always
       networks:
         - mynetwork
