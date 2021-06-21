@@ -1,0 +1,1 @@
+Caught exception: значение NULL в столбце "password" отношения "user" нарушает ограничение NOT NULL)

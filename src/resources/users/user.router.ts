@@ -1,6 +1,5 @@
 import express from 'express';
 import { ErrorHandler } from '../../middlewares/error.handler';
-import User from './user.model';
 import {
   getAll,
   getUser,
@@ -15,21 +14,21 @@ const router = express.Router();
 router.route('/').get(async (_req, res, next) => {
   const users = await getAll();
   if (users) {
-    res.json(users.map(User.toResponse));
+    res.json(users);
   } else next(new ErrorHandler(404));
 });
 
 router.route('/:userId').get(async (req, res, next) => {
   const user = await getUser(req.params.userId);
   if (user) {
-    res.json(User.toResponse(user));
+    res.json(user);
   } else next(new ErrorHandler(404, 'User not found'));
 });
 
 router.route('/').post(async (req, res, next) => {
-  const newUser = await createUser(new User(req.body));
+  const newUser = await createUser(req.body);
   if (newUser) {
-    res.status(201).json(User.toResponse(newUser));
+    res.status(201).json(newUser);
   } else next(new ErrorHandler(404, 'bad result'));
 });
 
@@ -39,7 +38,7 @@ router.route('/:userId').put(async (req, res, next) => {
     id: req.params.userId
   });
   if (newBoard) {
-    res.status(200).json(User.toResponse(newBoard));
+    res.status(200).json(newBoard);
   } else next(new ErrorHandler(401, 'bad result'));
 });
 

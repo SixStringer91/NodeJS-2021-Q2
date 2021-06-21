@@ -220,3 +220,138 @@
 {"message":"    \n METHOD: DELETE\n URL: /boards/4c4731c2-2129-455b-b774-5a9a9ed29de3/tasks/fe6d7cdf-b9bb-4458-ba75-d6da0f3865ad \n STATUS: 204 \n QUERY: {} \n BODY: {} \n TIME: 1","level":"info"}
 {"message":"    \n METHOD: DELETE\n URL: /boards/4c4731c2-2129-455b-b774-5a9a9ed29de3/tasks/14ebd720-e59c-4dfe-be9d-98f197af51d9 \n STATUS: 204 \n QUERY: {} \n BODY: {} \n TIME: 3","level":"info"}
 {"message":"    \n METHOD: DELETE\n URL: /boards/4c4731c2-2129-455b-b774-5a9a9ed29de3 \n STATUS: 204 \n QUERY: {} \n BODY: {} \n TIME: 1","level":"info"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: ������������ \"postgres\" �� ������ �������� ����������� (�� ������)","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: ConnectionNotFoundError: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"development\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Cannot create a \"my-connection\" connection because connection to the database already established.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"my-connection\" was not found.","level":"error"}
+{"message":"    \n METHOD: GET\n URL: /users \n STATUS: 200 \n QUERY: {} \n BODY: {\"id\":1,\"wins\":1,\"time\":10} \n TIME: 15","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /users \n STATUS: 201 \n QUERY: {} \n BODY: {} \n TIME: 7","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /users \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 115","level":"info"}
+{"message":"   Unhandled rejection detected: ⨯ Unable to compile TypeScript:\nsrc/entities/board.entity.ts:19:30 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                ~~~~\r\nsrc/entities/board.entity.ts:19:41 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                           ~~~~\r\n","level":"error"}
+{"message":"   Unhandled rejection detected: ⨯ Unable to compile TypeScript:\nsrc/entities/board.entity.ts:19:30 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                ~~~~\r\nsrc/entities/board.entity.ts:19:41 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                           ~~~~\r\n","level":"error"}
+{"message":"   Unhandled rejection detected: ⨯ Unable to compile TypeScript:\nsrc/entities/board.entity.ts:19:30 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                ~~~~\r\nsrc/entities/board.entity.ts:19:41 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                           ~~~~\r\n","level":"error"}
+{"message":"   Unhandled rejection detected: ⨯ Unable to compile TypeScript:\nsrc/entities/board.entity.ts:19:30 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                ~~~~\r\nsrc/entities/board.entity.ts:19:41 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                           ~~~~\r\n","level":"error"}
+{"message":"   Unhandled rejection detected: ⨯ Unable to compile TypeScript:\nsrc/entities/board.entity.ts:3:11 - error TS6196: 'IColumn' is declared but never used.\r\n\r\n3 interface IColumn {\r\n            ~~~~~~~\r\nsrc/entities/board.entity.ts:23:30 - error TS2304: Cannot find name 'User'.\r\n\r\n23   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                ~~~~\r\nsrc/entities/board.entity.ts:23:41 - error TS2304: Cannot find name 'User'.\r\n\r\n23   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                           ~~~~\r\n","level":"error"}
+{"message":"    \n METHOD: GET\n URL: /users \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 160","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /users \n STATUS: 201 \n QUERY: {} \n BODY: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} \n TIME: 7","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /users \n STATUS: 201 \n QUERY: {} \n BODY: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} \n TIME: 1","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /users \n STATUS: 201 \n QUERY: {} \n BODY: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} \n TIME: 2","level":"info"}
+{"message":"   Unhandled rejection detected: неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"    \n METHOD: GET\n URL: /board \n STATUS: 404 \n QUERY: {} \n BODY: {} \n TIME: 9","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /users \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 142","level":"info"}
+{"message":"    \n CODE: 400\n MESSAGE: Unexpected token \" in JSON at position 2","level":"warn"}
+{"message":"    \n CODE: 400\n MESSAGE: Unexpected token \" in JSON at position 2","level":"warn"}
+{"message":"    \n CODE: 400\n MESSAGE: Unexpected token \" in JSON at position 2","level":"warn"}
+{"message":"    \n CODE: 400\n MESSAGE: Unexpected token \" in JSON at position 2","level":"warn"}
+{"message":"    \n METHOD: GET\n URL: /user \n STATUS: 404 \n QUERY: {} \n BODY: {} \n TIME: 2","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /user \n STATUS: 404 \n QUERY: {} \n BODY: {} \n TIME: 1","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /user \n STATUS: 404 \n QUERY: {} \n BODY: {} \n TIME: 2","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /user \n STATUS: 404 \n QUERY: {} \n BODY: {} \n TIME: 1","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /user \n STATUS: 404 \n QUERY: {} \n BODY: {} \n TIME: 1","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /users \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 118","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /users \n STATUS: 201 \n QUERY: {} \n BODY: {} \n TIME: 6","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /users \n STATUS: 201 \n QUERY: {} \n BODY: {\"name\":\"11\",\"login\":\"11\"} \n TIME: 2","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /users \n STATUS: 200 \n QUERY: {} \n BODY: {\"name\":\"11\",\"login\":\"11\"} \n TIME: 3","level":"info"}
+{"message":"   Unhandled rejection detected: значение NULL в столбце \"password\" отношения \"user\" нарушает ограничение NOT NULL","level":"error"}
+{"message":"    \n METHOD: GET\n URL: /users/42e13052-8f68-4c89-977a-74b34a78bbeb \n STATUS: 200 \n QUERY: {} \n BODY: {\"name\":\"писюн\",\"login\":\"писюныч\"} \n TIME: 148","level":"info"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"    \n METHOD: PUT\n URL: /board \n STATUS: 404 \n QUERY: {} \n BODY: {\"name\":\"писюн\",\"login\":\"писюныч\"} \n TIME: 5","level":"info"}
+{"message":"    \n METHOD: PUT\n URL: /board \n STATUS: 404 \n QUERY: {} \n BODY: {\"name\":\"писюн\",\"login\":\"писюныч\"} \n TIME: 0","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /board \n STATUS: 404 \n QUERY: {} \n BODY: {\"name\":\"писюн\",\"login\":\"писюныч\"} \n TIME: 0","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /board \n STATUS: 404 \n QUERY: {} \n BODY: {} \n TIME: 2","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 260","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} \n TIME: 11","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 166","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 4","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/e320d8f8-732e-46f5-a8ee-d991201410a5 \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 8","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} \n TIME: 2","level":"info"}
+{"message":"    \n CODE: 404\n MESSAGE: Board not found","level":"warn"}
+{"message":"    \n METHOD: DELETE\n URL: /boards/93f34750-9a78-4a25-875f-4104eaf23826 \n STATUS: 404 \n QUERY: {} \n BODY: {} \n TIME: 12","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} \n TIME: 3","level":"info"}
+{"message":"    \n METHOD: PUT\n URL: /boards/58f96c3e-12ab-4ff9-b21f-41f0bc123c04 \n STATUS: 200 \n QUERY: {} \n BODY: {\"id\":\"58f96c3e-12ab-4ff9-b21f-41f0bc123c04\",\"title\":\"Autotest updated board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} \n TIME: 9","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/58f96c3e-12ab-4ff9-b21f-41f0bc123c04 \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 4","level":"info"}
+{"message":"    \n METHOD: DELETE\n URL: /boards/58f96c3e-12ab-4ff9-b21f-41f0bc123c04 \n STATUS: 204 \n QUERY: {} \n BODY: {} \n TIME: 2","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} \n TIME: 1","level":"info"}
+{"message":"    \n CODE: 404\n MESSAGE: Board not found","level":"warn"}
+{"message":"    \n METHOD: DELETE\n URL: /boards/9c4e140b-45ba-4b68-9290-0392401bd453 \n STATUS: 404 \n QUERY: {} \n BODY: {} \n TIME: 4","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} \n TIME: 1","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Task #1\",\"order\":1,\"description\":\"Lorem ipsum\",\"boardId\":\"263b159a-02fb-486f-9022-6c3c96159d3f\",\"userId\":null,\"columnId\":null} \n TIME: 12","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Task #2\",\"order\":2,\"description\":\"Lorem ipsum\",\"boardId\":\"263b159a-02fb-486f-9022-6c3c96159d3f\",\"userId\":null,\"columnId\":null} \n TIME: 14","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Task #4\",\"order\":4,\"description\":\"Lorem ipsum\",\"boardId\":\"263b159a-02fb-486f-9022-6c3c96159d3f\",\"userId\":null,\"columnId\":null} \n TIME: 237","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Task #3\",\"order\":3,\"description\":\"Lorem ipsum\",\"boardId\":\"263b159a-02fb-486f-9022-6c3c96159d3f\",\"userId\":null,\"columnId\":null} \n TIME: 244","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Task #5\",\"order\":5,\"description\":\"Lorem ipsum\",\"boardId\":\"263b159a-02fb-486f-9022-6c3c96159d3f\",\"userId\":null,\"columnId\":null} \n TIME: 246","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks/57b397cf-9c0a-4d45-b654-be58037f0167 \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 12","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks/39553eeb-4e0f-4e76-9312-c4f05276dfd7 \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 11","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks/e5ebab22-c8af-4002-a91f-8d530d2a748f \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 215","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks/97f33cf7-a23a-42e2-9722-966de405bab3 \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 215","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks/dc26a6b2-00a2-4864-8a2b-5c432767da0b \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 220","level":"info"}
+{"message":"    \n METHOD: DELETE\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f \n STATUS: 204 \n QUERY: {} \n BODY: {} \n TIME: 4","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks/57b397cf-9c0a-4d45-b654-be58037f0167 \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 8","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks/39553eeb-4e0f-4e76-9312-c4f05276dfd7 \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 10","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks/e5ebab22-c8af-4002-a91f-8d530d2a748f \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 12","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks/dc26a6b2-00a2-4864-8a2b-5c432767da0b \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 15","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/263b159a-02fb-486f-9022-6c3c96159d3f/tasks/97f33cf7-a23a-42e2-9722-966de405bab3 \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 17","level":"info"}
+{"message":"    \n METHOD: DELETE\n URL: /boards/e320d8f8-732e-46f5-a8ee-d991201410a5 \n STATUS: 204 \n QUERY: {} \n BODY: {} \n TIME: 8","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} \n TIME: 2","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/7d2744a5-9923-4759-a824-766e55999b83/tasks \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 4","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/7d2744a5-9923-4759-a824-766e55999b83/tasks \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 5","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /boards/7d2744a5-9923-4759-a824-766e55999b83/tasks/2e3bb9c7-4257-4272-b74f-6ad5fda3d2f7 \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 3","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards/7d2744a5-9923-4759-a824-766e55999b83/tasks \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null} \n TIME: 4","level":"info"}
+{"message":"    \n METHOD: POST\n URL: /boards/7d2744a5-9923-4759-a824-766e55999b83/tasks \n STATUS: 201 \n QUERY: {} \n BODY: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null} \n TIME: 3","level":"info"}
+{"message":"    \n CODE: 404\n MESSAGE: Task not found","level":"warn"}
+{"message":"    \n METHOD: PUT\n URL: /boards/7d2744a5-9923-4759-a824-766e55999b83/tasks/ebec6680-96fe-4301-a0fe-d74dbf1e4432 \n STATUS: 404 \n QUERY: {} \n BODY: {\"id\":\"ebec6680-96fe-4301-a0fe-d74dbf1e4432\",\"title\":\"Autotest updated task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":\"7d2744a5-9923-4759-a824-766e55999b83\",\"columnId\":null} \n TIME: 7","level":"info"}
+{"message":"   Unhandled rejection detected: неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"    \n METHOD: GET\n URL: /boards \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 22","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /users \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 144","level":"info"}
+{"message":"    \n METHOD: PUT\n URL: /users \n STATUS: 404 \n QUERY: {} \n BODY: {} \n TIME: 6","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /users \n STATUS: 200 \n QUERY: {} \n BODY: {} \n TIME: 118","level":"info"}
+{"message":"   Unhandled rejection detected: значение NULL в столбце \"password\" отношения \"user\" нарушает ограничение NOT NULL","level":"error"}
+{"message":"    \n METHOD: PUT\n URL: /users/84bc531a-b93c-483a-adad-831fafd1f87b \n STATUS: 200 \n QUERY: {} \n BODY: {\"name\":\"TEST_USER\",\"login\":\"test_user\"} \n TIME: 30","level":"info"}
+{"message":"    \n METHOD: PUT\n URL: /users/84bc531a-b93c-483a-adad-831fafd1f87b \n STATUS: 200 \n QUERY: {} \n BODY: {\"name\":\"TEST_USER\",\"login\":\"test_user\"} \n TIME: 43","level":"info"}
+{"message":"    \n METHOD: PUT\n URL: /users/84bc531a-b93c-483a-adad-831fafd1f87b \n STATUS: 200 \n QUERY: {} \n BODY: {\"name\":\"TEST_USER\",\"login\":\"test_user\"} \n TIME: 41","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /users/84bc531a-b93c-483a-adad-831fafd1f87b \n STATUS: 200 \n QUERY: {} \n BODY: {\"name\":\"TEST_USER\",\"login\":\"test_user\"} \n TIME: 239","level":"info"}
+{"message":"    \n METHOD: PUT\n URL: /users/84bc531a-b93c-483a-adad-831fafd1f87b \n STATUS: 200 \n QUERY: {} \n BODY: {\"name\":\"писька\",\"login\":\"писька\"} \n TIME: 144","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /users/84bc531a-b93c-483a-adad-831fafd1f87b \n STATUS: 200 \n QUERY: {} \n BODY: {\"name\":\"писька\",\"login\":\"писька\"} \n TIME: 3","level":"info"}
+{"message":"    \n METHOD: GET\n URL: /users/84bc531a-b93c-483a-adad-831fafd1f87b \n STATUS: 200 \n QUERY: {} \n BODY: {\"name\":\"писька\",\"login\":\"писька\"} \n TIME: 161","level":"info"}

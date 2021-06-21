@@ -1,37 +1,38 @@
-import Task from './tasks.model';
+import { getRepository } from 'typeorm';
+import { Task } from '../../entities/task.entity';
 
 const TASKS: Task[] = [];
 
-const getAll = async (boardsId: string): Promise<Task[]> => {
-  const filtered = TASKS.filter((el) => el.boardId === boardsId);
-  return filtered;
-};
+const getAll = async (boardId: string): Promise<Task[]> => (await getRepository(Task)
+  .find({ boardId }))
+  .map(Task.toResponse);
 
 const createTask = async (task: Task):Promise<Task|void> => {
-  TASKS.push(task);
-  return TASKS[TASKS.length - 1];
+  const taskRepository = getRepository(Task);
+  const newTask = taskRepository.create(task);
+  taskRepository.save(newTask);
+  return Task.toResponse(newTask);
 };
 
-const getTask = async (id: string):Promise<Task|void> => {
-  const currentTask = TASKS.find((task) => task.id === id);
-  return currentTask;
+const getTask = async (boardId:string, id: string):Promise<Task|null> => {
+  const tasksRepository = getRepository(Task);
+  const findTask = await tasksRepository.findOne({ boardId, id });
+  if (findTask) return Task.toResponse(findTask);
+  return null;
 };
 
-const updateTask = async (obj: Task):Promise<Task|void|null> => {
-  const taskIndex = TASKS.findIndex((user) => obj.id === user.id);
-  if (taskIndex !== -1) {
-    TASKS[taskIndex] = { ...TASKS[taskIndex], ...obj };
-    return TASKS[taskIndex];
-  }
+const updateTask = async (obj: Task):Promise<Task|null> => {
+  const tasksRepository = getRepository(Task);
+  await tasksRepository.update(obj.id, obj);
+  const findTask = await tasksRepository.findOne(obj.id);
+  if (findTask) return Task.toResponse(findTask);
   return null;
 };
 
 const deleteTask = async (id: string):Promise<boolean> => {
-  const taskIndex = TASKS.findIndex((user) => id === user.id);
-  if (taskIndex !== -1) {
-    TASKS.splice(taskIndex, 1);
-    return true;
-  }
+  const taskRepository = getRepository(Task);
+  const deletionRes = await taskRepository.delete(id);
+  if (deletionRes.affected) return true;
   return false;
 };
 

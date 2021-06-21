@@ -11,21 +11,21 @@ const router = express.Router();
 router.route('/').get(async (_req, res, next) => {
   const boards = await getAll();
   if (boards) {
-    res.json(boards.map(Board.toResponse));
+    res.json(boards);
   } else next(new ErrorHandler(404));
 });
 
 router.route('/:boardId').get(async (req, res, next) => {
   const board = await getBoard(req.params.boardId);
   if (board) {
-    res.json(Board.toResponse(board));
+    res.json(board);
   } else next(new ErrorHandler(404, 'Board not found'));
 });
 
 router.route('/').post(async (req, res, next) => {
   const newBoard = await createBoard(new Board(req.body));
   if (newBoard) {
-    res.status(201).json(Board.toResponse(newBoard));
+    res.status(201).json(newBoard);
   } else next(new ErrorHandler(404));
 });
 
@@ -35,7 +35,7 @@ router.route('/:boardId').put(async (req, res, next) => {
     id: req.params.boardId
   });
   if (newBoard) {
-    res.status(200).json(Board.toResponse(newBoard));
+    res.status(200).json(newBoard);
   } else next(new ErrorHandler(401));
 });
 

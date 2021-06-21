@@ -1,29 +1,35 @@
-import Board from './board.model';
+import { getRepository } from 'typeorm';
+import { Board } from '../../entities/board.entity';
 
-const BOARDS:Board[] = [];
+const getAll = async ():Promise<Board[]> => (await getRepository(Board).find({ where: {} }))
+  .map(Board.toResponse);
 
-const getAll = async ():Promise<Board[]> => BOARDS;
-
-const getBoard = async (id:string):Promise<Board|void> => BOARDS.find((el) => el.id === id);
+const getBoard = async (id:string):Promise<Board|null> => {
+  const board = await getRepository(Board).findOne(id);
+  if (board) return Board.toResponse(board);
+  return null;
+};
 
 const createNewBoard = async (board:Board):Promise<Board|void> => {
-  BOARDS.push(board);
-  return BOARDS[BOARDS.length - 1];
+  const boardRepository = getRepository(Board);
+  const newUser = boardRepository.create(board);
+  boardRepository.save(newUser);
+  return Board.toResponse(newUser);
 };
 
 const updateBoard = async (obj:Board):Promise<Board|void> => {
-  const boardIndex = BOARDS.findIndex((board) => obj.id === board.id);
-  BOARDS[boardIndex] = { ...BOARDS[boardIndex], ...obj };
-
-  return BOARDS[boardIndex];
+  const boardRepository = getRepository(Board);
+  const findedUser = await boardRepository.findOne(obj.id);
+  if (!findedUser) return undefined;
+  const updateData = { ...obj };
+  const updatedUser = await boardRepository.update(obj.id, updateData);
+  return Board.toResponse(updatedUser.raw);
 };
 
 const deleteBoard = async (id:string):Promise<boolean> => {
-  const boardIndex = BOARDS.findIndex((el:Board) => el.id === id);
-  if (boardIndex !== -1) {
-    BOARDS.splice(boardIndex, 1);
-    return true;
-  }
+  const studentRepositiory = getRepository(Board);
+  const deletionRes = await studentRepositiory.delete(id);
+  if (deletionRes.affected) return true;
   return false;
 };
 

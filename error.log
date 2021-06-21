@@ -1,0 +1,56 @@
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: ������������ \"postgres\" �� ������ �������� ����������� (�� ������)","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: ConnectionNotFoundError: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"development\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"default\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: Cannot create a \"my-connection\" connection because connection to the database already established.","level":"error"}
+{"message":"   Unhandled rejection detected: Connection \"my-connection\" was not found.","level":"error"}
+{"message":"   Unhandled rejection detected: ⨯ Unable to compile TypeScript:\nsrc/entities/board.entity.ts:19:30 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                ~~~~\r\nsrc/entities/board.entity.ts:19:41 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                           ~~~~\r\n","level":"error"}
+{"message":"   Unhandled rejection detected: ⨯ Unable to compile TypeScript:\nsrc/entities/board.entity.ts:19:30 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                ~~~~\r\nsrc/entities/board.entity.ts:19:41 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                           ~~~~\r\n","level":"error"}
+{"message":"   Unhandled rejection detected: ⨯ Unable to compile TypeScript:\nsrc/entities/board.entity.ts:19:30 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                ~~~~\r\nsrc/entities/board.entity.ts:19:41 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                           ~~~~\r\n","level":"error"}
+{"message":"   Unhandled rejection detected: ⨯ Unable to compile TypeScript:\nsrc/entities/board.entity.ts:19:30 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                ~~~~\r\nsrc/entities/board.entity.ts:19:41 - error TS2304: Cannot find name 'User'.\r\n\r\n19   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                           ~~~~\r\n","level":"error"}
+{"message":"   Unhandled rejection detected: ⨯ Unable to compile TypeScript:\nsrc/entities/board.entity.ts:3:11 - error TS6196: 'IColumn' is declared but never used.\r\n\r\n3 interface IColumn {\r\n            ~~~~~~~\r\nsrc/entities/board.entity.ts:23:30 - error TS2304: Cannot find name 'User'.\r\n\r\n23   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                ~~~~\r\nsrc/entities/board.entity.ts:23:41 - error TS2304: Cannot find name 'User'.\r\n\r\n23   static toResponse = (user: User):Omit<User, 'password'> => {\r\n                                           ~~~~\r\n","level":"error"}
+{"message":"   Unhandled rejection detected: неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"   Unhandled rejection detected: значение NULL в столбце \"password\" отношения \"user\" нарушает ограничение NOT NULL","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"   Unhandled rejection detected: значение NULL в столбце \"password\" отношения \"user\" нарушает ограничение NOT NULL","level":"error"}
