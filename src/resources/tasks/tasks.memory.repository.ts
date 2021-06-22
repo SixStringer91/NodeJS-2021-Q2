@@ -10,8 +10,8 @@ const getAll = async (boardId: string): Promise<Task[]> => (await getRepository(
 const createTask = async (task: Task):Promise<Task|void> => {
   const taskRepository = getRepository(Task);
   const newTask = taskRepository.create(task);
-  taskRepository.save(newTask);
-  return Task.toResponse(newTask);
+  const createdTask = await taskRepository.save(newTask);
+  return Task.toResponse(createdTask);
 };
 
 const getTask = async (boardId:string, id: string):Promise<Task|null> => {
@@ -23,9 +23,11 @@ const getTask = async (boardId:string, id: string):Promise<Task|null> => {
 
 const updateTask = async (obj: Task):Promise<Task|null> => {
   const tasksRepository = getRepository(Task);
-  await tasksRepository.update(obj.id, obj);
-  const findTask = await tasksRepository.findOne(obj.id);
-  if (findTask) return Task.toResponse(findTask);
+  const findedTask = await tasksRepository.findOne(obj.id);
+  if (!findedTask) return null;
+  const reducedData = { ...findedTask, ...obj };
+  const updatedTask = await tasksRepository.update(obj.id, reducedData);
+  if (updatedTask.affected) return Task.toResponse(reducedData);
   return null;
 };
 

@@ -1,4 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity, Column, PrimaryGeneratedColumn, OneToMany
+} from 'typeorm';
+// eslint-disable-next-line import/no-cycle
+import { Task } from './task.entity';
 
 interface IColumn {
   title: string;
@@ -12,14 +16,21 @@ export class Board {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column('varchar', { length: 25 })
+  @Column('varchar', { length: 40 })
   title = 'BOARD';
 
   @Column({ type: 'jsonb', nullable: true })
   columns: IColumn[];
 
+  @OneToMany(() => Task, (task:Task) => task.boardId)
+  tasks: Task[];
+  
   static toResponse(board:Board):Board {
-    const { id, title, columns } = board;
-    return { id, title, columns };
+    const {
+      id, title, columns, tasks
+    } = board;
+    return {
+      id, title, columns, tasks
+    };
   }
 }

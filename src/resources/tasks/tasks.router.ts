@@ -1,5 +1,4 @@
 import express, { Request, Response } from 'express';
-import Task from './tasks.model';
 import { getBoard } from '../boards/board.service';
 import taskService from './tasks.service';
 import { ErrorHandler } from '../../middlewares/error.handler';
@@ -31,7 +30,7 @@ router.route('/').post(async (req: Request, res: Response, next) => {
   if (boardsId) {
     const boardCheck = await getBoard(boardsId);
     const newTask = await taskService.createTask(
-      new Task({ ...req.body, boardId: boardsId })
+      { ...req.body, boardId: boardsId }
     );
     if (newTask && boardCheck) res.status(201).json(newTask);
   } else next(new ErrorHandler(404, 'Bad result'));

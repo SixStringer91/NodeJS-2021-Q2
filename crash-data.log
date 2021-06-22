@@ -1,1 +1,1 @@
-Caught exception: значение NULL в столбце "password" отношения "user" нарушает ограничение NOT NULL)
+Caught exception: INSERT или UPDATE в таблице "task" нарушает ограничение внешнего ключа "FK_29c593b244774c65824ae1df648")

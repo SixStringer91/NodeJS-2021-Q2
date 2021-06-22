@@ -54,3 +54,16 @@
 {"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
 {"message":"   Unhandled rejection detected: неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
 {"message":"   Unhandled rejection detected: значение NULL в столбце \"password\" отношения \"user\" нарушает ограничение NOT NULL","level":"error"}
+{"message":"   Unhandled rejection detected: неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"   Unhandled rejection detected: значение не умещается в тип character varying(25)","level":"error"}
+{"message":"   Unhandled rejection detected: столбец \"name\" отношения \"user\" содержит значения NULL","level":"error"}
+{"message":"   Unhandled rejection detected: столбец \"name\" отношения \"user\" содержит значения NULL","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8090 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: столбец \"description\" отношения \"task\" содержит значения NULL","level":"error"}
+{"message":"   Unhandled rejection detected: столбец \"description\" отношения \"task\" содержит значения NULL","level":"error"}
+{"message":"   Unhandled rejection detected: INSERT или UPDATE в таблице \"task\" нарушает ограничение внешнего ключа \"FK_29c593b244774c65824ae1df648\"","level":"error"}

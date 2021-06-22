@@ -2,7 +2,6 @@ import express from 'express';
 import {
   getAll, getBoard, createBoard, updateBoard, deleteBoard
 } from './board.service';
-import Board from './board.model';
 import { deleteAllTasks } from '../tasks/tasks.service';
 import { ErrorHandler } from '../../middlewares/error.handler';
 
@@ -23,7 +22,7 @@ router.route('/:boardId').get(async (req, res, next) => {
 });
 
 router.route('/').post(async (req, res, next) => {
-  const newBoard = await createBoard(new Board(req.body));
+  const newBoard = await createBoard({ ...req.body });
   if (newBoard) {
     res.status(201).json(newBoard);
   } else next(new ErrorHandler(404));

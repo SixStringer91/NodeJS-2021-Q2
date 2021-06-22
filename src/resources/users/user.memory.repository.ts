@@ -15,27 +15,22 @@ Promise<Omit<User, 'password'> | null> => {
   return null;
 };
 
-const createNewUser = (user: User): Omit<User, 'password'> => {
+const createNewUser = async (user: User): Promise<Omit<User, 'password'>> => {
   const userRepository = getRepository(User);
   const newUser = userRepository.create(user);
-  userRepository.save(newUser);
-  return User.toResponse(newUser);
+  const updatedUser = await userRepository.save(newUser);
+  return User.toResponse(updatedUser);
 };
 
 const updateUser = async (obj:
-{ id:string, name?:string, password?:string, login?:string }): Promise<Omit<User, 'password'> | void> => {
+{ id:string, name?:string, password?:string, login?:string }): Promise<Omit<User, 'password'> | null> => {
   const userRepository = getRepository(User);
   const findedUser = await userRepository.findOne(obj.id);
-  if (!findedUser) return undefined;
-  const updateData = {
-    name: obj.name || findedUser.name,
-    password: obj.password || findedUser.password,
-    login: obj.login || findedUser.login
-  };
-  const reducedData = { ...findedUser, updateData };
+  if (!findedUser) return null;
+  const reducedData = { ...findedUser, ...obj };
   const updatedUser = await userRepository.update(obj.id, reducedData);
-  console.log(updatedUser.raw);
-  return User.toResponse(reducedData);
+  if (updatedUser.affected) return User.toResponse(reducedData);
+  return null;
 };
 
 const deleteUser = async (id: string): Promise<boolean> => {

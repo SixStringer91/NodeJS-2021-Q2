@@ -13,17 +13,18 @@ const getBoard = async (id:string):Promise<Board|null> => {
 const createNewBoard = async (board:Board):Promise<Board|void> => {
   const boardRepository = getRepository(Board);
   const newUser = boardRepository.create(board);
-  boardRepository.save(newUser);
-  return Board.toResponse(newUser);
+  const createdBoard = await boardRepository.save(newUser);
+  return Board.toResponse(createdBoard);
 };
 
-const updateBoard = async (obj:Board):Promise<Board|void> => {
+const updateBoard = async (obj:Board):Promise<Board|null> => {
   const boardRepository = getRepository(Board);
-  const findedUser = await boardRepository.findOne(obj.id);
-  if (!findedUser) return undefined;
-  const updateData = { ...obj };
-  const updatedUser = await boardRepository.update(obj.id, updateData);
-  return Board.toResponse(updatedUser.raw);
+  const findedTask = await boardRepository.findOne(obj.id);
+  if (!findedTask) return null;
+  const reducedData = { ...findedTask, ...obj };
+  const updatedBoard = await boardRepository.update(obj.id, reducedData);
+  if (updatedBoard.affected) return Board.toResponse(reducedData);
+  return null;
 };
 
 const deleteBoard = async (id:string):Promise<boolean> => {

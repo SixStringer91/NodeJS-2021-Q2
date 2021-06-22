@@ -1,38 +1,46 @@
 import {
   Column,
   Entity,
-  PrimaryGeneratedColumn
+  PrimaryGeneratedColumn,
+  ManyToOne
 } from 'typeorm';
+import { Board } from './board.entity';
+import { User } from './user.entity';
 
 @Entity()
 export class Task {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ type: 'varchar', length: 30 })
+  @Column('varchar', { length: 40 })
   title: string;
 
-  @Column()
+  @Column('integer')
   order: number;
 
-  @Column({ type: 'varchar', length: 30 })
+  @Column('varchar', { length: 140 })
   description: string;
 
-  @Column({ type: 'varchar', nullable: true })
+  @Column('uuid', { nullable: true })
+  columnId: string | null = null;
+
+  @ManyToOne(() => User, (user) => user.tasks, {
+    onDelete: 'SET NULL',
+    nullable: true,
+  })
+  @Column('uuid', { name: 'userIdId', nullable: true }) 
   userId: string | null;
 
-  @Column({ type: 'varchar', nullable: true })
-  boardId: string | null;
-
-  @Column({ type: 'varchar', nullable: true })
-  columnId: string | null;
+  @ManyToOne(() => Board, (board) => board.tasks, {
+    onDelete: 'CASCADE',
+    nullable: true,
+  })
+  @Column('uuid', { name: 'boardIdId', nullable: true })
+  boardId: string;
 
   static toResponse(task:Task):Task {
-    const {
-      id, title, order, description, userId, boardId, columnId
-    } = task;
     return {
-      id, title, order, description, userId, boardId, columnId
+      ...task
     };
   }
 }
