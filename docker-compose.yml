@@ -15,8 +15,9 @@ services:
         - mynetwork
     postgres:
       build: ./database/
-      volumes:
-        - ./postgre:/var/lib/postgresql/data
+      image: denzeldocker/docker-postgres
+      # volumes:
+      #   - ./postgre:/var/lib/postgresql/data
       ports:
         - ${POSTGRES_PORT}:${POSTGRES_PORT}
       restart: always

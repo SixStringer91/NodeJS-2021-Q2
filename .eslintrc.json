@@ -29,7 +29,7 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-      "import/no-cycle":"never",
+      "import/no-cycle":0,
       "comma-dangle": ["error", {
         "arrays": "never",
         "objects": "never",

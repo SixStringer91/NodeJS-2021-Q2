@@ -24,7 +24,7 @@ export class Board {
 
   @OneToMany(() => Task, (task:Task) => task.boardId)
   tasks: Task[];
-  
+
   static toResponse(board:Board):Board {
     const {
       id, title, columns, tasks

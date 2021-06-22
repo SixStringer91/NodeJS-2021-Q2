@@ -1405,3 +1405,4 @@
 {"message":"    \n METHOD: DELETE\n URL: /boards/31e89344-ff6d-4f7c-9642-e483bb8ec5d0/tasks/f63c7a39-1a64-4259-988f-889a73b99e69 \n STATUS: 204 \n QUERY: {} \n BODY: {} \n TIME: 3","level":"info"}
 {"message":"    \n METHOD: DELETE\n URL: /boards/31e89344-ff6d-4f7c-9642-e483bb8ec5d0/tasks/34b07623-1b10-43dc-964e-932fe4f3b3f1 \n STATUS: 204 \n QUERY: {} \n BODY: {} \n TIME: 4","level":"info"}
 {"message":"    \n METHOD: DELETE\n URL: /boards/31e89344-ff6d-4f7c-9642-e483bb8ec5d0 \n STATUS: 204 \n QUERY: {} \n BODY: {} \n TIME: 3","level":"info"}
+{"message":"   Unhandled rejection detected: ������������ \"postgres\" �� ������ �������� ����������� (�� ������)","level":"error"}

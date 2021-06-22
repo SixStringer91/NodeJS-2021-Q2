@@ -13,10 +13,10 @@ const config = {
   type: 'postgres',
   synchronize: false,
   host: process.env['DB_HOST'],
-  port: process.env['DB_PORT'],
-  username: process.env['DB_USERNAME'],
-  password: process.env['DB_PASSWORD'],
-  database: process.env['DB_NAME'],
+  port: process.env['POSTGRES_PORT'],
+  username: process.env['POSTGRES_USER'],
+  password: process.env['POSTGRES_PASSWORD'],
+  database: process.env['POSTGRES_DB'],
   entities: [User, Board, Task],
   autoReconnect: true,
   reconnectTries: Number.MAX_VALUE,
@@ -24,8 +24,8 @@ const config = {
   migrationsRun: true,
   migrations: ['src/migration/*.ts'],
   cli: {
-    migrationsDir:'/src/migration',
-  },
+    migrationsDir: '/src/migration'
+  }
 } as ConnectionOptions;
 
-export=config
+export=config;

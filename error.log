@@ -67,3 +67,4 @@
 {"message":"   Unhandled rejection detected: столбец \"description\" отношения \"task\" содержит значения NULL","level":"error"}
 {"message":"   Unhandled rejection detected: столбец \"description\" отношения \"task\" содержит значения NULL","level":"error"}
 {"message":"   Unhandled rejection detected: INSERT или UPDATE в таблице \"task\" нарушает ограничение внешнего ключа \"FK_29c593b244774c65824ae1df648\"","level":"error"}
+{"message":"   Unhandled rejection detected: ������������ \"postgres\" �� ������ �������� ����������� (�� ������)","level":"error"}
