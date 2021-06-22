@@ -2,7 +2,6 @@ version: '3'
 services:
     node:
       build: .
-      image: daniluk666/nodejs-express
       ports: 
         - ${PORT}:${PORT}
       depends_on:
@@ -18,7 +17,6 @@ services:
       build: ./database/
       # volumes:
       #   - ./postgre:/var/lib/postgresql/data
-      image: daniluk666/postgress
       ports:
         - ${POSTGRES_PORT}:${POSTGRES_PORT}
       restart: always
