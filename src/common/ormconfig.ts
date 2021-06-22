@@ -9,9 +9,9 @@ dotenv.config({
   path: path.join(__dirname, '../../.env')
 });
 
-export const config = {
+const config = {
   type: 'postgres',
-  synchronize: true,
+  synchronize: false,
   host: process.env['DB_HOST'],
   port: process.env['DB_PORT'],
   username: process.env['DB_USERNAME'],
@@ -20,5 +20,12 @@ export const config = {
   entities: [User, Board, Task],
   autoReconnect: true,
   reconnectTries: Number.MAX_VALUE,
-  reconnectionInterval: 1000
+  reconnectionInterval: 1000,
+  migrationsRun: true,
+  migrations: ['src/migration/*.ts'],
+  cli: {
+    migrationsDir:'/src/migration',
+  },
 } as ConnectionOptions;
+
+export=config
