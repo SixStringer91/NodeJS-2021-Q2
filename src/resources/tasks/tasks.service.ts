@@ -1,9 +1,9 @@
 import taskRepo from './tasks.memory.repository';
-import Task from './tasks.model';
+import { Task } from '../../entities/task.entity';
 
 const getAll = (boardsId:string): Promise<Task[]> => taskRepo.getAll(boardsId);
 const createTask = (task:Task):Promise<Task|void> => taskRepo.createTask(task);
-const getTask = (id:string):Promise<Task|void> => taskRepo.getTask(id);
+const getTask = (boardsId:string, id:string):Promise<Task|null> => taskRepo.getTask(boardsId, id);
 const updateTask = (obj:Task):Promise<Task|void|null> => taskRepo.updateTask(obj);
 const deleteTask = (id:string):Promise<boolean> => taskRepo.deleteTask(id);
 export const deleteAllTasks = (boardId:string):Promise<void> => taskRepo.deleteAllTasks(boardId);

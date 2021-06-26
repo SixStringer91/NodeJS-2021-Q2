@@ -15,8 +15,8 @@ services:
         - mynetwork
     postgres:
       build: ./database/
-      volumes:
-        - ./postgre:/var/lib/postgresql/data
+      # volumes:
+      #   - ./postgre:/var/lib/postgresql/data
       ports:
         - ${POSTGRES_PORT}:${POSTGRES_PORT}
       restart: always
