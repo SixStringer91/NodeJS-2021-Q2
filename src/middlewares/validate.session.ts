@@ -2,11 +2,10 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { getUser } from '../resources/users/user.service';
 
-export const validateSession = (req:Request, res:Response, next:NextFunction) => {
+export const validateSession = (req:Request, res:Response, next:NextFunction):void => {
   if (req.method === 'OPTIONS') {
     next();
   } else {
-    console.log(req.url);
     const header = <string> req.headers['x-access-token'] || req.headers.authorization;
     const sessionToken = header ? header.replace(/^Bearer\s+/, '') : '';
     if (!sessionToken) {
@@ -14,9 +13,9 @@ export const validateSession = (req:Request, res:Response, next:NextFunction) =>
         .status(401)
         .send({ auth: false, message: 'Unauthorized error' });
     } else {
-      jwt.verify(sessionToken, 'lets_play_sum_games_man', (_err: any, decoded:any) => {
+      jwt.verify(sessionToken, process.env['JWT_SECRET_KEY'] as string, (_err, decoded) => {
         if (decoded) {
-          getUser(decoded.id).then(
+          getUser(decoded['id']).then(
             () => {
               next();
             },
