@@ -10,7 +10,7 @@ import {
   handleError, ErrorHandler, uncaughtException, unhandledRejection
 } from './middlewares/error.handler';
 import { validateSession } from './middlewares/validate.session';
-import { userLogin } from './middlewares/login.handler';
+import { userLogin } from './resources/login/login.service';
 
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
