@@ -9,6 +9,8 @@ import taskRouter from './resources/tasks/tasks.router';
 import {
   handleError, ErrorHandler, uncaughtException, unhandledRejection
 } from './middlewares/error.handler';
+import { validateSession } from './middlewares/validate.session';
+import { userLogin } from './middlewares/login.handler';
 
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
@@ -24,10 +26,10 @@ app.use('/', (req, res, next) => {
     return;
   } next();
 });
-
-app.use('/users', userRouter);
-app.use('/boards', boardRouter);
-app.use('/boards/:boardsId/tasks', taskRouter);
+app.use('/login', userLogin);
+app.use('/users', validateSession, userRouter);
+app.use('/boards', validateSession, boardRouter);
+app.use('/boards/:boardsId/tasks', validateSession, taskRouter);
 app.use((err:ErrorHandler, _req:Request, res:Response, next:NextFunction) => {
   handleError(err, res);
   next();

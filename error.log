@@ -1,0 +1,21 @@
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: неверный синтаксис для типа uuid: \"123\"","level":"error"}
+{"message":"   Unhandled rejection detected: значение NULL в столбце \"name\" отношения \"user\" нарушает ограничение NOT NULL","level":"error"}
+{"message":"   Unhandled rejection detected: значение NULL в столбце \"name\" отношения \"user\" нарушает ограничение NOT NULL","level":"error"}
+{"message":"   Unhandled rejection detected: значение NULL в столбце \"name\" отношения \"user\" нарушает ограничение NOT NULL","level":"error"}
+{"message":"   Unhandled rejection detected: значение NULL в столбце \"name\" отношения \"user\" нарушает ограничение NOT NULL","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"user\" was found.","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"user\" was found.","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"user\" was found.","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"user\" was found.","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"user\" was found.","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"user\" was found.","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"user\" was found.","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"user\" was found.","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"user\" was found.","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"user\" was found.","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"user\" was found.","level":"error"}
+{"message":"   Unhandled rejection detected: No entity column \"obj\" was found.","level":"error"}

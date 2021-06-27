@@ -33,6 +33,7 @@ router.route('/').post(async (req, res, next) => {
 });
 
 router.route('/:userId').put(async (req, res, next) => {
+  console.log(req.body);
   const newBoard = await updateUser({
     ...req.body,
     id: req.params.userId

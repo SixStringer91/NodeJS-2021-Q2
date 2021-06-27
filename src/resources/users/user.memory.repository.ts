@@ -1,4 +1,5 @@
 import { getRepository } from 'typeorm';
+import bcrypt from 'bcrypt';
 import { User } from '../../entities/user.entity';
 
 const getAll = async (): Promise<Omit<User, 'password'>[]> => {
@@ -10,14 +11,18 @@ const getAll = async (): Promise<Omit<User, 'password'>[]> => {
 
 const getOneUser = async (id: string):
 Promise<Omit<User, 'password'> | null> => {
-  const userRepository = await getRepository(User).findOne(id);
-  if (userRepository) return User.toResponse(userRepository);
+  const user = await getRepository(User).findOne(id);
+  if (user) return User.toResponse(user);
   return null;
 };
 
 const createNewUser = async (user: User): Promise<Omit<User, 'password'>> => {
   const userRepository = getRepository(User);
-  const newUser = userRepository.create(user);
+  const newUser = userRepository.create({
+    name: user.name,
+    login: user.login,
+    password: bcrypt.hashSync(user.password, 10)
+  });
   const updatedUser = await userRepository.save(newUser);
   return User.toResponse(updatedUser);
 };
