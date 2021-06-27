@@ -4,7 +4,7 @@ import { getUser } from '../resources/users/user.service';
 
 export const validateSession = (req:Request, res:Response, next:NextFunction) => {
   if (req.method === 'OPTIONS') {
-    next(); // allowing options as a method for request
+    next();
   } else {
     console.log(req.url);
     const header = <string> req.headers['x-access-token'] || req.headers.authorization;
@@ -18,7 +18,6 @@ export const validateSession = (req:Request, res:Response, next:NextFunction) =>
         if (decoded) {
           getUser(decoded.id).then(
             () => {
-              // req.body.user = { ...user };
               next();
             },
             () => {
