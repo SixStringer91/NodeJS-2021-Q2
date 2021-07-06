@@ -32,7 +32,7 @@ export const uncaughtException = (err: Error, origin: string):void => {
     `Caught exception: ${err}\nException origin: ${origin}`
   );
   uncaughtExceptionLogger(err, origin);
-  // process.exit(1);
+  process.exit(1);
 };
 
 export const unhandledRejection = (reason:{ message:string }):void => {

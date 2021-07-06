@@ -15,7 +15,7 @@
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
-    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
+    "migration:generate": "npx ts-node ./node_modules/typeorm/cli.js --config=src/common/ormconfig.ts migration:generate -n Trello_db"
   },
   "keywords": [
     "rs",
@@ -47,11 +47,14 @@
     ]
   },
   "dependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/node": "^15.6.1",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "cross-env": "7.0.3",
     "dotenv": "9.0.0",
     "express": "4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "swagger-ui-express": "4.1.6",
     "typeorm": "^0.2.34",
     "uuid": "8.3.2",
@@ -60,6 +63,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.12",
+    "@types/jsonwebtoken": "^8.5.2",
     "@types/swagger-ui-express": "^4.1.2",
     "@types/uuid": "^8.3.0",
     "@types/yamljs": "^0.2.31",

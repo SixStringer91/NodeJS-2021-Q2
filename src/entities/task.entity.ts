@@ -12,13 +12,13 @@ export class Task {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column('varchar', { length: 40 })
+  @Column('varchar', { length: 200 })
   title: string;
 
   @Column('integer')
   order: number;
 
-  @Column('varchar', { length: 140 })
+  @Column('varchar', { length: 200 })
   description: string;
 
   @Column('uuid', { nullable: true })

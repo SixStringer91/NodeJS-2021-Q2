@@ -16,7 +16,7 @@ export class Board {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column('varchar', { length: 40 })
+  @Column('varchar', { length: 200 })
   title = 'BOARD';
 
   @Column({ type: 'jsonb', nullable: true })
