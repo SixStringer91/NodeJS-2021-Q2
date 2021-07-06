@@ -22,3 +22,4 @@
 {"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
 {"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
 {"message":"   Error: listen EADDRINUSE: address already in use :::8080 origin uncaughtException","level":"error"}
+{"message":"   Unhandled rejection detected: getaddrinfo ENOTFOUND postgres","level":"error"}

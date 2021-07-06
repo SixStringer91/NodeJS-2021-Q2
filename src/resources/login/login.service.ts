@@ -13,6 +13,5 @@ export const userLogin = async (
   });
   if (login) {
     res.status(201).json(login);
-  }
-  next(new ErrorHandler(401, 'Unauthorized'));
+  } else next(new ErrorHandler(401, 'Unauthorized'));
 };
