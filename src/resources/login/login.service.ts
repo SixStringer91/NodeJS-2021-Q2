@@ -1,17 +1,26 @@
-import { Response, Request, NextFunction } from 'express';
-import { ErrorHandler } from '../../middlewares/error.handler';
-import { userLoginController } from './login.controller';
+import { Injectable } from '@nestjs/common';
+import { CreateLoginDto } from './dto/create-login.dto';
+import { UpdateLoginDto } from './dto/update-login.dto';
 
-export const userLogin = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-): Promise<void> => {
-  const login = await userLoginController({
-    login: req.body.login,
-    password: req.body.password
-  });
-  if (login) {
-    res.status(201).json(login);
-  } else next(new ErrorHandler(401, 'Unauthorized'));
-};
+@Injectable()
+export class LoginService {
+  create(createLoginDto: CreateLoginDto) {
+    return 'This action adds a new login';
+  }
+
+  findAll() {
+    return `This action returns all login`;
+  }
+
+  findOne(id: number) {
+    return `This action returns a #${id} login`;
+  }
+
+  update(id: number, updateLoginDto: UpdateLoginDto) {
+    return `This action updates a #${id} login`;
+  }
+
+  remove(id: number) {
+    return `This action removes a #${id} login`;
+  }
+}
