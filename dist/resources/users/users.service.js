@@ -11,14 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const user_entity_1 = require("./entities/user.entity");
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const bcrypt_1 = __importDefault(require("bcrypt"));
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 let UsersService = class UsersService {
     constructor(userRepository) {
         this.userRepository = userRepository;
@@ -32,7 +35,7 @@ let UsersService = class UsersService {
         const newUser = this.userRepository.create({
             name: user.name,
             login: user.login,
-            password: bcrypt.hashSync(user.password, 10)
+            password: bcrypt_1.default.hashSync(user.password, 10)
         });
         const updatedUser = await this.userRepository.save(newUser);
         return user_entity_1.User.toResponse(updatedUser);
@@ -48,7 +51,7 @@ let UsersService = class UsersService {
         const findedUser = await this.userRepository.findOne(obj.id);
         if (!findedUser)
             return null;
-        const reducedData = Object.assign(Object.assign({}, findedUser), obj);
+        const reducedData = { ...findedUser, ...obj };
         const updatedUser = await this.userRepository.update(obj.id, reducedData);
         if (updatedUser.affected)
             return user_entity_1.User.toResponse(reducedData);
@@ -65,10 +68,14 @@ let UsersService = class UsersService {
         console.log(login);
         return new Promise((resolve, reject) => {
             if (user) {
-                bcrypt.compare(password, user.password, (_err, matches) => {
+                bcrypt_1.default.compare(password, user.password, (_err, matches) => {
                     if (matches) {
-                        const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET_KEY, { expiresIn: 60 * 60 * 24 });
-                        resolve(Object.assign(Object.assign({}, user_entity_1.User.toResponse(user)), { token, message: 'Successfully authenticated.' }));
+                        const token = jsonwebtoken_1.default.sign({ id: user.id }, process.env.JWT_SECRET_KEY, { expiresIn: 60 * 60 * 24 });
+                        resolve({
+                            ...user_entity_1.User.toResponse(user),
+                            token,
+                            message: 'Successfully authenticated.'
+                        });
                     }
                     reject();
                 });

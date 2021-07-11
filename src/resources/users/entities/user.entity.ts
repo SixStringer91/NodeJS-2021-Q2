@@ -1,8 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { Task } from '../../tasks/entities/task.entity';
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
 export interface IUserToRes extends Omit<User, 'password'> {
   token: string;

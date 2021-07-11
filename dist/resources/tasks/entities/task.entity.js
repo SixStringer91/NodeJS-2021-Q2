@@ -18,7 +18,9 @@ let Task = class Task {
         this.columnId = null;
     }
     static toResponse(task) {
-        return Object.assign({}, task);
+        return {
+            ...task
+        };
     }
 };
 __decorate([
@@ -42,7 +44,7 @@ __decorate([
     __metadata("design:type", String)
 ], Task.prototype, "columnId", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => user_entity_1.User, (user) => user.tasks, {
+    typeorm_1.ManyToOne(() => user_entity_1.User, user => user.tasks, {
         onDelete: 'SET NULL',
         nullable: true
     }),
@@ -50,7 +52,7 @@ __decorate([
     __metadata("design:type", String)
 ], Task.prototype, "userId", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => board_entity_1.Board, (board) => board.tasks, {
+    typeorm_1.ManyToOne(() => board_entity_1.Board, board => board.tasks, {
         onDelete: 'CASCADE',
         nullable: true
     }),

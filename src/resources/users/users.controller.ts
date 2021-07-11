@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { IUserToRes, User } from './entities/user.entity';
-import { AuthGuard } from '../login/auth.guard';
+import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('users')
 @UseGuards(AuthGuard)

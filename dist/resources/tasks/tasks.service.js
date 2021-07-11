@@ -40,7 +40,7 @@ let TasksService = class TasksService {
         const findedTask = await this.tasksRepository.findOne(obj.id);
         if (!findedTask)
             return null;
-        const reducedData = Object.assign(Object.assign({}, findedTask), obj);
+        const reducedData = { ...findedTask, ...obj };
         const updatedTask = await this.tasksRepository.update(obj.id, reducedData);
         if (updatedTask.affected)
             return task_entity_1.Task.toResponse(reducedData);

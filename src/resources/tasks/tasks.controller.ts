@@ -12,7 +12,7 @@ import {
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { Task } from './entities/task.entity';
-import { AuthGuard } from '../login/auth.guard';
+import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('/boards/:boardId/tasks')
 @UseGuards(AuthGuard)

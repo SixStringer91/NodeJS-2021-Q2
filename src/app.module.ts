@@ -1,3 +1,4 @@
+import { HttpErrorFilter } from './shared/http-error.filter';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -6,7 +7,9 @@ import { AppService } from './app.service';
 import { UsersModule } from './resources/users/users.module';
 import { BoardsModule } from './resources/boards/boards.module';
 import { TasksModule } from './resources/tasks/tasks.module';
-import { LoginModule } from './resources/login/login.module';
+import { LoginModule } from './resources/auth/login.module';
+import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
+import { LoggingInterceptor } from './shared/logging.interceptor';
 
 @Module({
   imports: [
@@ -27,6 +30,16 @@ import { LoginModule } from './resources/login/login.module';
     LoginModule
   ],
   controllers: [AppController],
-  providers: [AppService]
+  providers: [
+    AppService,
+    {
+      provide: APP_FILTER,
+      useClass: HttpErrorFilter
+    },
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: LoggingInterceptor
+    }
+  ]
 })
 export class AppModule {}

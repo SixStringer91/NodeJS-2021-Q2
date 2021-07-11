@@ -16,7 +16,7 @@ exports.TasksController = void 0;
 const common_1 = require("@nestjs/common");
 const tasks_service_1 = require("./tasks.service");
 const task_entity_1 = require("./entities/task.entity");
-const auth_guard_1 = require("../login/auth.guard");
+const auth_guard_1 = require("../auth/auth.guard");
 let TasksController = class TasksController {
     constructor(tasksService) {
         this.tasksService = tasksService;
@@ -28,7 +28,7 @@ let TasksController = class TasksController {
         throw new common_1.HttpException('Task not found', common_1.HttpStatus.NOT_FOUND);
     }
     async create(boardId, body) {
-        const newTask = await this.tasksService.create(Object.assign(Object.assign({}, body), { boardId }));
+        const newTask = await this.tasksService.create({ ...body, boardId });
         if (newTask)
             return newTask;
         throw new common_1.HttpException('Task not found', common_1.HttpStatus.NOT_FOUND);
@@ -41,7 +41,10 @@ let TasksController = class TasksController {
         throw new common_1.HttpException('Task not found', common_1.HttpStatus.NOT_FOUND);
     }
     async update(taskId, body) {
-        const updatedTask = await this.tasksService.update(Object.assign(Object.assign({}, body), { id: taskId }));
+        const updatedTask = await this.tasksService.update({
+            ...body,
+            id: taskId
+        });
         if (updatedTask)
             return updatedTask;
         throw new common_1.HttpException('Task not found', common_1.HttpStatus.NOT_FOUND);

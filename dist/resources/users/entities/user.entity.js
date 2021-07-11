@@ -8,12 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 var User_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const typeorm_1 = require("typeorm");
 const task_entity_1 = require("../../tasks/entities/task.entity");
-const jwt = require('jsonwebtoken');
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 let User = User_1 = class User {
     static get toResponse() {
         return User_1._toResponse;
@@ -24,7 +27,7 @@ let User = User_1 = class User {
 };
 User._toResponse = (user) => {
     const { id, name, login, tasks } = user;
-    const token = jwt.sign({ id: user.id }, process.env['JWT_SECRET_KEY'], { expiresIn: 60 * 60 * 24 });
+    const token = jsonwebtoken_1.default.sign({ id: user.id }, process.env['JWT_SECRET_KEY'], { expiresIn: 60 * 60 * 24 });
     return {
         id,
         name,

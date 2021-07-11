@@ -2,11 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const bcrypt = require('bcrypt');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const jwt = require('jsonwebtoken');
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 @Injectable()
 export class UsersService {

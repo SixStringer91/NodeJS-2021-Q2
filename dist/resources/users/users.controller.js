@@ -16,7 +16,7 @@ exports.UsersController = void 0;
 const common_1 = require("@nestjs/common");
 const users_service_1 = require("./users.service");
 const user_entity_1 = require("./entities/user.entity");
-const auth_guard_1 = require("../login/auth.guard");
+const auth_guard_1 = require("../auth/auth.guard");
 let UsersController = class UsersController {
     constructor(usersService) {
         this.usersService = usersService;
@@ -40,7 +40,10 @@ let UsersController = class UsersController {
         }
     }
     async update(id, body) {
-        const newBoard = await this.usersService.updateUser(Object.assign(Object.assign({}, body), { id }));
+        const newBoard = await this.usersService.updateUser({
+            ...body,
+            id
+        });
         if (newBoard) {
             return newBoard;
         }

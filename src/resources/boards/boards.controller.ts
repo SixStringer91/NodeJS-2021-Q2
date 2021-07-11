@@ -12,7 +12,7 @@ import {
 } from '@nestjs/common';
 import { Board } from './entities/board.entity';
 import { BoardsService } from './boards.service';
-import { AuthGuard } from '../login/auth.guard';
+import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('boards')
 @UseGuards(AuthGuard)

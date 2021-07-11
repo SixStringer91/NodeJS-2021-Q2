@@ -40,7 +40,7 @@ let BoardsService = class BoardsService {
         const findedTask = await this.boardsRepository.findOne(obj.id);
         if (!findedTask)
             return null;
-        const reducedData = Object.assign(Object.assign({}, findedTask), obj);
+        const reducedData = { ...findedTask, ...obj };
         const updatedBoard = await this.boardsRepository.update(obj.id, reducedData);
         if (updatedBoard.affected)
             return board_entity_1.Board.toResponse(reducedData);

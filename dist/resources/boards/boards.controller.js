@@ -16,7 +16,7 @@ exports.BoardsController = void 0;
 const common_1 = require("@nestjs/common");
 const board_entity_1 = require("./entities/board.entity");
 const boards_service_1 = require("./boards.service");
-const auth_guard_1 = require("../login/auth.guard");
+const auth_guard_1 = require("../auth/auth.guard");
 let BoardsController = class BoardsController {
     constructor(boardsService) {
         this.boardsService = boardsService;
@@ -36,14 +36,17 @@ let BoardsController = class BoardsController {
         throw new common_1.HttpException('Board not found', common_1.HttpStatus.NOT_FOUND);
     }
     async create(body) {
-        const newBoard = await this.boardsService.create(Object.assign({}, body));
+        const newBoard = await this.boardsService.create({ ...body });
         if (newBoard) {
             return newBoard;
         }
         throw new common_1.HttpException('board not created', common_1.HttpStatus.BAD_REQUEST);
     }
     async update(id, body) {
-        const newBoard = await this.boardsService.update(Object.assign(Object.assign({}, body), { id }));
+        const newBoard = await this.boardsService.update({
+            ...body,
+            id
+        });
         if (newBoard) {
             return newBoard;
         }

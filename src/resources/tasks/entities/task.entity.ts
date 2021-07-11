@@ -19,14 +19,14 @@ export class Task {
   @Column('uuid', { nullable: true })
   columnId: string | null = null;
 
-  @ManyToOne(() => User, (user) => user.tasks, {
+  @ManyToOne(() => User, user => user.tasks, {
     onDelete: 'SET NULL',
     nullable: true
   })
   @Column('uuid', { name: 'userIdId', nullable: true })
   userId: string | null;
 
-  @ManyToOne(() => Board, (board) => board.tasks, {
+  @ManyToOne(() => Board, board => board.tasks, {
     onDelete: 'CASCADE',
     nullable: true
   })

@@ -6,9 +6,7 @@ import {
 } from '@nestjs/common';
 import { getRepository } from 'typeorm';
 import { User } from '../users/entities/user.entity';
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
 export class AuthGuard implements CanActivate {
   async canActivate(context: ExecutionContext): Promise<any> {
@@ -23,7 +21,7 @@ export class AuthGuard implements CanActivate {
         jwt.verify(
           sessionToken,
           process.env.JWT_SECRET_KEY as string,
-          (_err: any, decoded: { id: any }) => {
+          (_err, decoded: { id }) => {
             if (decoded) {
               getRepository(User)
                 .findOne({
@@ -51,6 +49,5 @@ export class AuthGuard implements CanActivate {
         );
       });
     }
-    // return isValidated;
   }
 }
