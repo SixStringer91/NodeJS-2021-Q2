@@ -1,7 +1,7 @@
-import { Board } from './entities/board.entity';
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Board } from './entities/board.entity';
 
 @Injectable()
 export class BoardsService {
@@ -9,6 +9,7 @@ export class BoardsService {
     @InjectRepository(Board)
     private readonly boardsRepository: Repository<Board>
   ) {}
+
   async findAll() {
     const boards = await this.boardsRepository.find({ where: {} });
     return boards.map(Board.toResponse);

@@ -5,6 +5,8 @@ import { User } from './entities/user.entity';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const bcrypt = require('bcrypt');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const jwt = require('jsonwebtoken');
 
 @Injectable()
 export class UsersService {
@@ -52,5 +54,29 @@ export class UsersService {
     const deletionRes = await this.userRepository.delete(id);
     if (deletionRes.affected) return true;
     return false;
+  }
+
+  async auth({ login, password }) {
+    const user = await this.userRepository.findOne({ login });
+    console.log(login);
+    return new Promise((resolve, reject) => {
+      if (user) {
+        bcrypt.compare(password, user.password, (_err, matches) => {
+          if (matches) {
+            const token = jwt.sign(
+              { id: user.id },
+              process.env.JWT_SECRET_KEY as string,
+              { expiresIn: 60 * 60 * 24 }
+            );
+            resolve({
+              ...User.toResponse(user),
+              token,
+              message: 'Successfully authenticated.'
+            });
+          }
+          reject();
+        });
+      }
+    });
   }
 }

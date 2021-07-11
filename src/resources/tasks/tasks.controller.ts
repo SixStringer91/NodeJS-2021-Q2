@@ -7,14 +7,18 @@ import {
   Delete,
   Put,
   HttpException,
-  HttpStatus
+  HttpStatus,
+  UseGuards
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { Task } from './entities/task.entity';
+import { AuthGuard } from '../login/auth.guard';
 
 @Controller('/boards/:boardId/tasks')
+@UseGuards(AuthGuard)
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
+
   @Get()
   async findAll(@Param('boardId') boardId: string) {
     const tasks = await this.tasksService.findAll(boardId);
