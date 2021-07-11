@@ -32,7 +32,6 @@ export class UsersService {
   }
 
   async getUser(id: string) {
-    console.log(id);
     const user = await this.userRepository.findOne(id);
     if (user) return User.toResponse(user);
     return null;
@@ -55,7 +54,6 @@ export class UsersService {
 
   async auth({ login, password }) {
     const user = await this.userRepository.findOne({ login });
-    console.log(login);
     return new Promise((resolve, reject) => {
       if (user) {
         bcrypt.compare(password, user.password, (_err, matches) => {

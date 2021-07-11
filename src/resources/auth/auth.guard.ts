@@ -29,7 +29,6 @@ export class AuthGuard implements CanActivate {
                 })
                 .then(
                   () => {
-                    console.log('хуй');
                     resolve(true);
                   },
                   () => {

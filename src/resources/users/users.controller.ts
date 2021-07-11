@@ -59,7 +59,6 @@ export class UsersController {
   async remove(@Param('id') id: string): Promise<string | void> {
     const userFinded = await this.usersService.deleteUser(id);
     if (userFinded) {
-      // await ifUserDeleted(userId);
       return 'The board has been deleted';
     }
   }
