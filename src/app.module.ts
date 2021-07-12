@@ -12,14 +12,14 @@ import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { LoggingInterceptor } from './shared/logging.interceptor';
 import config from './common/ormconfig';
 
-console.log(config.password)
+console.log(config.password);
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: () => (config as TypeOrmModuleOptions ),
+      useFactory: () => config as TypeOrmModuleOptions,
       inject: [ConfigService]
     }),
     UsersModule,

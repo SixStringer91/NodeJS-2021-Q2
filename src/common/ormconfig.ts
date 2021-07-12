@@ -3,13 +3,13 @@ import path from 'path';
 import { User } from '../resources/users/entities/user.entity';
 import { Board } from '../resources/boards/entities/board.entity';
 import { Task } from '../resources/tasks/entities/task.entity';
-import { TrelloDb1626057786688 as Tables } from '../migration/1626057786688-Trello_db'
+import { TrelloDb1626057786688 as Tables } from '../migration/1626057786688-Trello_db';
 
 dotenv.config({
   path: path.join(__dirname, '../../.env')
 });
 
-const config =  {
+const config = {
   type: 'postgres',
   host: process.env.POSTGRES_HOST || process.env.DB_HOST,
   port:
@@ -29,4 +29,3 @@ const config =  {
 };
 
 export default config;
-

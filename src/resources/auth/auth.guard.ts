@@ -2,13 +2,22 @@ import {
   CanActivate,
   ExecutionContext,
   HttpStatus,
-  HttpException
+  HttpException,
+  Injectable
 } from '@nestjs/common';
 import { getRepository } from 'typeorm';
 import { User } from '../users/entities/user.entity';
 import jwt from 'jsonwebtoken';
+import { UsersService } from 'resources/users/users.service';
 
+@Injectable()
 export class AuthGuard implements CanActivate {
+  private readonly loginService: UsersService;
+
+  constructor(loginService: UsersService) {
+    this.loginService = loginService;
+  }
+
   async canActivate(context: ExecutionContext): Promise<any> {
     const req = context.switchToHttp().getRequest();
     const header =
@@ -21,23 +30,19 @@ export class AuthGuard implements CanActivate {
         jwt.verify(
           sessionToken,
           process.env.JWT_SECRET_KEY as string,
-          (_err, decoded: { id }) => {
+          (_err, decoded) => {
             if (decoded) {
-              getRepository(User)
-                .findOne({
-                  where: { id: decoded.id }
-                })
-                .then(
-                  () => {
-                    resolve(true);
-                  },
-                  () => {
-                    throw new HttpException(
-                      'Unauthorized error',
-                      HttpStatus.UNAUTHORIZED
-                    );
-                  }
-                );
+              this.loginService.getUser(decoded.id).then(
+                () => {
+                  resolve(true);
+                },
+                () => {
+                  throw new HttpException(
+                    'Unauthorized error',
+                    HttpStatus.UNAUTHORIZED
+                  );
+                }
+              );
             } else {
               throw new HttpException(
                 'Unauthorized error',
