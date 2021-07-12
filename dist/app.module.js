@@ -22,14 +22,8 @@ const tasks_module_1 = require("./resources/tasks/tasks.module");
 const login_module_1 = require("./resources/auth/login.module");
 const core_1 = require("@nestjs/core");
 const logging_interceptor_1 = require("./shared/logging.interceptor");
-const dotenv_1 = __importDefault(require("dotenv"));
-const path_1 = __importDefault(require("path"));
-const user_entity_1 = require("./resources/users/entities/user.entity");
-const board_entity_1 = require("./resources/boards/entities/board.entity");
-const task_entity_1 = require("./resources/tasks/entities/task.entity");
-dotenv_1.default.config({
-    path: path_1.default.join(__dirname, '../.env')
-});
+const ormconfig_1 = __importDefault(require("./common/ormconfig"));
+console.log(ormconfig_1.default.password);
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -38,17 +32,7 @@ AppModule = __decorate([
             config_1.ConfigModule.forRoot({ isGlobal: true }),
             typeorm_1.TypeOrmModule.forRootAsync({
                 imports: [config_1.ConfigModule],
-                useFactory: () => ({
-                    type: 'postgres',
-                    host: process.env.POSTGRES_HOST || process.env.DB_HOST,
-                    port: parseInt(process.env.POSTGRES_PORT) ||
-                        parseInt(process.env.DB_PORT),
-                    username: process.env.POSTGRES_USER || process.env.DB_USERNAME,
-                    password: process.env.POSTGRES_PASSWORD || process.env.DB_PASSWORD,
-                    database: process.env.POSTGRES_DB || process.env.DB_NAME,
-                    entities: [user_entity_1.User, board_entity_1.Board, task_entity_1.Task],
-                    synchronize: true
-                }),
+                useFactory: () => ormconfig_1.default,
                 inject: [config_1.ConfigService]
             }),
             users_module_1.UsersModule,
