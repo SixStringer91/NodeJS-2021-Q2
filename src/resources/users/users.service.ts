@@ -53,6 +53,7 @@ export class UsersService {
   }
 
   async auth({ login, password }) {
+    console.log(login);
     const user = await this.userRepository.findOne({ login });
     return new Promise((resolve, reject) => {
       if (user) {

@@ -3,8 +3,7 @@ import {
   Post,
   Body,
   HttpException,
-  HttpStatus,
-  HttpCode
+  HttpStatus
 } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import { UserLoginDto } from './dto/user-login.dto';
@@ -18,7 +17,6 @@ export class AuthController {
   }
 
   @Post()
-  @HttpCode(200)
   async create(
     @Body('login') login: UserLoginDto['login'],
     @Body('password') password: UserLoginDto['password']

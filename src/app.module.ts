@@ -20,7 +20,6 @@ dotenv.config({
   path: path.join(__dirname, '../.env')
 });
 
-console.log(process.env['DB_HOST']);
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),

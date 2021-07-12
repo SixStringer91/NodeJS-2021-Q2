@@ -1,13 +1,27 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { createUserAdmin } from './utils/admin.creator';
+import {
+  FastifyAdapter,
+  NestFastifyApplication
+} from '@nestjs/platform-fastify';
+import dotenv from 'dotenv';
+import path from 'path';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-require('dotenv').config();
+dotenv.config({
+  path: path.join(__dirname, '../.env')
+});
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const isFastify = JSON.parse(process.env.USE_FASTIFY.toLowerCase());
+  const app = isFastify
+    ? await NestFactory.create<NestFastifyApplication>(
+        AppModule,
+        new FastifyAdapter()
+      )
+    : await NestFactory.create(AppModule);
   createUserAdmin();
-  await app.listen(8080);
+  await app.listen(8080, '0.0.0.0');
+  console.log(`enabled ${isFastify ? 'fastify' : 'express'}`);
 }
 bootstrap();
