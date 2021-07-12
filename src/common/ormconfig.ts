@@ -1,31 +1,32 @@
-import { ConnectionOptions } from 'typeorm';
 import dotenv from 'dotenv';
 import path from 'path';
-import { User } from '../entities/user.entity';
-import { Board } from '../entities/board.entity';
-import { Task } from '../entities/task.entity';
+import { User } from '../resources/users/entities/user.entity';
+import { Board } from '../resources/boards/entities/board.entity';
+import { Task } from '../resources/tasks/entities/task.entity';
+import { TrelloDb1626057786688 as Tables } from '../migration/1626057786688-Trello_db'
 
 dotenv.config({
   path: path.join(__dirname, '../../.env')
 });
 
-const config = {
+const config =  {
   type: 'postgres',
-  synchronize: false,
-  host: process.env['POSTGRES_HOST'] || process.env['DB_HOST'],
-  port: process.env['POSTGRES_PORT'] || process.env['DB_PORT'],
-  username: process.env['POSTGRES_USER'] || process.env['DB_USERNAME'],
-  password: process.env['POSTGRES_PASSWORD'] || process.env['DB_PASSWORD'],
-  database: process.env['POSTGRES_DB'] || process.env['DB_NAME'],
+  host: process.env.POSTGRES_HOST || process.env.DB_HOST,
+  port:
+    parseInt(<string>process.env.POSTGRES_PORT) ||
+    parseInt(<string>process.env.DB_PORT),
+  username: process.env.POSTGRES_USER || process.env.DB_USERNAME,
+  password: process.env.POSTGRES_PASSWORD || process.env.DB_PASSWORD,
+  database: process.env.POSTGRES_DB || process.env.DB_NAME,
   entities: [User, Board, Task],
-  autoReconnect: true,
-  reconnectTries: Number.MAX_VALUE,
-  reconnectionInterval: 1000,
+  migrations: [Tables],
+  migrationsTableName: 'migrations_typeorm',
+  synchronize: false,
   migrationsRun: true,
-  migrations: ['src/migration/*.ts'],
   cli: {
-    migrationsDir: '/src/migration'
+    migrationsDir: 'src/migration'
   }
-} as ConnectionOptions;
+};
 
-export=config;
+export default config;
+

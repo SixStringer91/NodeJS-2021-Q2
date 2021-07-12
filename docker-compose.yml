@@ -11,6 +11,8 @@ services:
       volumes:
         - ./src:/usr/app/src
       restart: always
+      env_file:
+        - .env
       networks:
         - mynetwork
     postgres:

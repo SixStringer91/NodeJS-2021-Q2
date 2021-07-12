@@ -1,0 +1,47 @@
+config:
+  target: "http://localhost:8080"
+  phases:
+    - duration: 30
+      arrivalRate: 10
+      maxVusers: 40
+scenarios:
+  - name: 'Users test'
+    flow:
+      - post:
+          url: '/login'
+          json:
+            login: 'admin'
+            password: 'admin'
+          capture:
+            - json: '$.token'
+              as: token
+      - get:
+          url: '/users'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+      - post:
+          url: '/users'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+          json:
+            login: 'lol'
+            password: 'lol'
+          capture:
+            - json: '$.id'
+              as: id
+      - get:
+          url: '/users/{{ id }}'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+      - put:
+          url: '/users/{{ id }}'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+          json:
+            login: 'loh'
+            name: 'loh'
+      - delete:
+          url: '/users/{{ id }}'
+          headers:
+            Authorization: 'Bearer {{ token }}'
+
