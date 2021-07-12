@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TrelloDb1626053589471 = void 0;
-class TrelloDb1626053589471 {
+exports.TrelloDb1626057786688 = void 0;
+class TrelloDb1626057786688 {
     constructor() {
-        this.name = 'TrelloDb1626053589471';
+        this.name = 'TrelloDb1626057786688';
     }
     async up(queryRunner) {
         await queryRunner.query(`CREATE TABLE "board" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "title" character varying(200) NOT NULL, "columns" jsonb, CONSTRAINT "PK_865a0f2e22c140d261b1df80eb1" PRIMARY KEY ("id"))`);
@@ -20,5 +20,5 @@ class TrelloDb1626053589471 {
         await queryRunner.query(`DROP TABLE "board"`);
     }
 }
-exports.TrelloDb1626053589471 = TrelloDb1626053589471;
-//# sourceMappingURL=1626053589471-Trello_db.js.map
+exports.TrelloDb1626057786688 = TrelloDb1626057786688;
+//# sourceMappingURL=1626057786688-Trello_db.js.map

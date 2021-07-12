@@ -12,8 +12,8 @@ export const createUserAdmin = async (): Promise<void> => {
       password: bcrypt.hashSync('admin', 10)
     });
     await userRepository.save(newUser);
-    console.log('user admin was succsesful created');
+    console.log('user admin was successfully created');
     return;
   }
-  console.log('user admin is exists in database');
+  console.log('user admin already exists');
 };

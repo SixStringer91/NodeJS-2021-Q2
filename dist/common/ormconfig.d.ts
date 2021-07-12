@@ -10,6 +10,7 @@ declare const config: {
     database: string;
     entities: (typeof User | typeof Board | typeof Task)[];
     synchronize: boolean;
+    migrations: string[];
     migrationsTableName: string;
     migrationsRun: boolean;
     cli: {

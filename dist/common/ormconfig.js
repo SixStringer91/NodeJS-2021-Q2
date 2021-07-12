@@ -21,6 +21,7 @@ const config = {
     database: process.env.POSTGRES_DB || process.env.DB_NAME,
     entities: [user_entity_1.User, board_entity_1.Board, task_entity_1.Task],
     synchronize: false,
+    migrations: ['../../dist/migration/**.{js,ts}'],
     migrationsTableName: 'migrations_typeorm',
     migrationsRun: true,
     cli: {
